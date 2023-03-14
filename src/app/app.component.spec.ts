@@ -1,16 +1,14 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { TestBed } from "@angular/core/testing";
+import { AppComponent } from "./app.component";
 
-describe('AppComponent', () => {
+describe("AppComponent", () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent],
     }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it("should create the app", () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
@@ -19,13 +17,15 @@ describe('AppComponent', () => {
   it(`should have as title 'angular-whos-who'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-whos-who');
+    expect(app.title).toEqual("angular-whos-who");
   });
 
-  it('should render title', () => {
+  it("should render title", () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angular-whos-who app is running!');
+    expect(compiled.querySelector(".content span")?.textContent).toContain(
+      "angular-whos-who app is running!"
+    );
   });
 });

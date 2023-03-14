@@ -42,7 +42,7 @@ const checkStatus = (response: any) => {
  *
  * @return {object}           The response data
  */
-export const request = (url: any, options: any) => {
+export const request = (url: any, options?: any) => {
   // eslint-disable-next-line no-undef
   return fetch(url, options).then(checkStatus).then(parseJSON);
 };
