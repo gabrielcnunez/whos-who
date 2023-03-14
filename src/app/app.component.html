@@ -1,0 +1,9 @@
+<div>
+  Genre:
+  <select [(ngModel)]="selectedGenre" (ngModelChange)="setGenre($event)">
+    <option [value]=""></option>
+    <option [value]="genre" *ngFor="let genre of genres">
+      {{ genre }}
+    </option>
+  </select>
+</div>
