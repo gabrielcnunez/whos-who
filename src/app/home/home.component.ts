@@ -47,12 +47,30 @@ export class HomeComponent implements OnInit {
 
   loadGenres = async (t: any) => {
     this.configLoading = true;
-    const response = await fetchFromSpotify({
-      token: t,
-      endpoint: "recommendations/available-genre-seeds",
-    });
-    console.log(response);
-    this.genres = response.genres;
+
+    // #################################################################################
+    // DEPRECATED!!! Use only for example purposes
+    // DO NOT USE the recommendations endpoint in your application
+    // Has been known to cause 429 errors
+    // const response = await fetchFromSpotify({
+    //   token: t,
+    //   endpoint: "recommendations/available-genre-seeds",
+    // });
+    // console.log(response);
+    // #################################################################################
+    
+    this.genres = [
+      "rock",
+      "rap",
+      "pop",
+      "country",
+      "hip-hop",
+      "jazz",
+      "alternative",
+      "j-pop",
+      "k-pop",
+      "emo"
+    ]
     this.configLoading = false;
   };
 
