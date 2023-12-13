@@ -2,11 +2,11 @@
 
 # Overview
 
-For this project, students are tasked with developing a front-end Angular application that interfaces with [Spotify's API](https://developer.spotify.com/) in order to build a guessing game application. Students will read through the provided [REQUIREMENTS.md](REQUIREMENDS.md) file and use it to plan the application they will create with their team. After getting approval from their primary instructor they will develop the application and conduct an app demo on the end of the second group project.
+For this project, students are tasked with developing a front-end Angular application that interfaces with [Spotify's API](https://developer.spotify.com/documentation/web-api) in order to build a guessing game application. Students will read through the provided [REQUIREMENTS.md](REQUIREMENDS.md) file and use it to plan the application they will create with their team. After getting approval from their primary instructor they will develop the application and conduct an app demo on the end of the second group project.
 
 ## Project Planning
 
-To start this project each team needs to meet on Monday and create an action plan for their group. In this meeting they will read through the business requirements detailed in the section below, make a wireframe for the application in [Figma](https://www.figma.com/), determine components required to implement the wireframe, and fill out [this survey](https://forms.office.com/r/mqQyHDC5Bm) for the instructional team to review before anyone on the team starts development of their application. The instructional team will approve or request any changes no later than the second day of the project and do our best to ensure each team is able to begin development by the end of the second day.
+To start this project each team needs to meet on the first day of the project and create an action plan for their group. In this meeting they will read through the business requirements detailed in the section below, make a wireframe for the application in [Figma](https://www.figma.com/), determine components required to implement the wireframe, and fill out [this survey](https://forms.office.com/r/mqQyHDC5Bm) for the instructional team to review before anyone on the team starts development of their application. The instructional team will approve or request any changes no later than the second day of the project and do our best to ensure each team is able to begin development by the end of the second day.
 
 ## Requirements
 
