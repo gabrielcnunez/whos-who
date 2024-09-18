@@ -25,7 +25,9 @@ export class LeadersComponent implements OnInit {
     { name: 'Margot Tenenbaum', score: 2400 },
     { name: 'Richie Tenebaum', score: 2300 },
     { name: 'Jolyne', score: 2200 },
-    { name: 'Kaneki', score: 2100 }
+    { name: 'Kaneki', score: 2100 },
+    { name: 'Johnny Bravo', score: 2000},
+    { name: 'Willie Jack', score: 1900}
   ];
 
   displayedPlayers: Player[] = [];
