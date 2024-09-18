@@ -1,10 +1,39 @@
-<div *ngIf="authLoading || configLoading">Loading...</div>
-<div *ngIf="!authLoading && !configLoading">
-  Genre:
-  <select [(ngModel)]="selectedGenre" (ngModelChange)="setGenre($event)">
-    <option [value]=""></option>
-    <option [value]="genre" *ngFor="let genre of genres">
-      {{ genre }}
-    </option>
-  </select>
+<app-navigation></app-navigation>
+
+<h1 style="text-align: center">Welcome to Who's Who!</h1>
+<h2 style="text-align: center">Choose a Genre to Play</h2>
+
+<div
+  style="
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-top: 20px;
+  "
+>
+  <div *ngIf="authLoading || configLoading">Loading...</div>
+  <div *ngIf="!authLoading && !configLoading">
+    Genre:
+    <select
+      style="cursor: pointer"
+      [(ngModel)]="selectedGenre"
+      (ngModelChange)="setGenre($event)"
+    >
+      <option [value]=""></option>
+      <option [value]="genre" *ngFor="let genre of genres">
+        {{ genre }}
+      </option>
+    </select>
+  </div>
+</div>
+
+<div
+  style="
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 50px;
+  "
+>
+  <button routerLink="/gameplay" class="play-button">Play</button>
 </div>

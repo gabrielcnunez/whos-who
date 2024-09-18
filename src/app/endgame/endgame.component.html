@@ -1,0 +1,31 @@
+<router-outlet></router-outlet>
+<app-navigation></app-navigation>
+
+<div class="container">
+  <h1 *ngIf="condition === false" style="color: red">Game Over</h1>
+  <h1 *ngIf="condition === true" style="color: green">You Win!</h1>
+
+  <h2>Score: {{ score }}</h2>
+
+  <form>
+    <input
+      type="text"
+      id="name"
+      placeholder="Enter Player Name"
+      class="input"
+    />
+  </form>
+
+  <div>
+    <button class="button">Submit</button>
+  </div>
+
+  <br /><br /><br /><br /><br />
+
+  <div>
+    <button class="button" routerLink="">Play Again</button>
+  </div>
+  <div>
+    <button class="button" routerLink="/home">Home</button>
+  </div>
+</div>
