@@ -1,2 +1,26 @@
 <app-navigation></app-navigation>
-<p>gameplay works</p>
+
+<div style="display: grid; justify-content: center; align-items: center">
+  <div style="display: flex; position: relative; justify-content: end">
+    <h3 style="padding-right: 50px">Score: {{ score }}</h3>
+    <h3>Game: {{ round }}/20p</h3>
+  </div>
+
+  <div>
+    <h1 style="text-align: center">Guess the Artist!</h1>
+  </div>
+
+  <div class="music-container">
+    <fa-icon
+      style="color: black; font-size: 60px"
+      [icon]="faPlayCircle"
+    ></fa-icon>
+  </div>
+
+  <div style="display: grid; justify-content: center">
+    <button class="btn-group">{{ artist1 }}</button>
+    <button class="btn-group">{{ artist2 }}</button>
+    <button class="btn-group">{{ artist3 }}</button>
+    <button class="btn-group">{{ artist4 }}</button>
+  </div>
+</div>
