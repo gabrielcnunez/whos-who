@@ -11,6 +11,7 @@ const TOKEN_KEY = "whos-who-access-token";
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
+  
   constructor() {}
 
   genres: String[] = ["House", "Alternative", "J-Rock", "R&B"];

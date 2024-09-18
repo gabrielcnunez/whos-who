@@ -4,10 +4,15 @@ import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 
 import { AppComponent } from "./app.component";
+import { ConfigComponent } from "./config/config.component";
+import { EndgameComponent } from './endgame/endgame.component';
 import { HomeComponent } from "./home/home.component";
-import { LeadersComponent } from './components/leaders/leaders.component';
-import { LeaderboardComponent } from './leaderboard/leaderboard.component';
-import { ConfigComponent } from './config/config.component';
+import { GameplayComponent } from './gameplay/gameplay.component';
+import { LeaderboardComponent } from "./leaderboard/leaderboard.component";
+import { LeadersComponent } from "./components/leaders/leaders.component";
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { AppRoutingModule } from './app-routing.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -16,8 +21,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LeadersComponent, LeaderboardComponent, ConfigComponent],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
+  declarations: [AppComponent, HomeComponent, NavigationComponent, EndgameComponent, GameplayComponent, LeadersComponent, LeaderboardComponent, ConfigComponent],
+  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes), FontAwesomeModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
