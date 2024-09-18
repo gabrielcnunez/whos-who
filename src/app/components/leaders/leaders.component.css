@@ -1,0 +1,21 @@
+.leaders {
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+}
