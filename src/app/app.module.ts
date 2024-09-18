@@ -7,11 +7,16 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { LeadersComponent } from './components/leaders/leaders.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { ConfigComponent } from './config/config.component';
 
-const routes: Routes = [{ path: "", component: HomeComponent }];
+const routes: Routes = [
+  { path: "", component: HomeComponent },
+  { path: "leaderboard", component: LeaderboardComponent },
+  { path: "settings", component: ConfigComponent },
+];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LeadersComponent, LeaderboardComponent],
+  declarations: [AppComponent, HomeComponent, LeadersComponent, LeaderboardComponent, ConfigComponent],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
   providers: [],
   bootstrap: [AppComponent],
