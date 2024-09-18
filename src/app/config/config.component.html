@@ -1,0 +1,39 @@
+<div class="settings-page">
+  <h2>Settings</h2>
+  <br />
+  <br />
+  <div class="difficulty">
+    <label>Difficulty: </label>
+    <label>
+      <input
+        type="radio"
+        name="difficulty"
+        value="easy"
+        [(ngModel)]="selectedDifficulty"
+      />
+      Easy
+    </label>
+    <label>
+      <input
+        type="radio"
+        name="difficulty"
+        value="normal"
+        [(ngModel)]="selectedDifficulty"
+        checked
+      />
+      Normal
+    </label>
+    <label>
+      <input
+        type="radio"
+        name="difficulty"
+        value="hard"
+        [(ngModel)]="selectedDifficulty"
+      />
+      Hard
+    </label>
+  </div>
+  <br />
+  <br />
+  <button (click)="goToLeaderboard()">Go To Leaderboard</button>
+</div>
