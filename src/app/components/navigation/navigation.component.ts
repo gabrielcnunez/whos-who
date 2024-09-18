@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faHome, faCog } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faCog, faWrench } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navigation',
@@ -10,6 +10,7 @@ export class NavigationComponent implements OnInit {
 
   faHome = faHome;
   faCog = faCog;
+  faWrench= faWrench;
 
   constructor() { }
 
