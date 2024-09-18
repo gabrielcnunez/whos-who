@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-gameplay',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gameplay.component.css']
 })
 export class GameplayComponent implements OnInit {
+
+  faPlayCircle = faPlayCircle;
 
   constructor() { }
 

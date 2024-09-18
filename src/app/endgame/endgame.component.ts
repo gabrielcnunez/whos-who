@@ -9,7 +9,7 @@ export class EndgameComponent implements OnInit {
 
   @Input() score = 0;
 
-  public condition = true;
+  public condition = false;
 
   constructor() { }
 
