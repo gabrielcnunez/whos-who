@@ -13,8 +13,8 @@
 >
   <div *ngIf="authLoading || configLoading">Loading...</div>
   <div *ngIf="!authLoading && !configLoading">
-    Choose Your Genre
-    <select
+ 
+    <select class="selector-box"
       style="cursor: pointer"
       [(ngModel)]="selectedGenre"
       (ngModelChange)="setGenre($event)"

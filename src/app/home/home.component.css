@@ -5,3 +5,7 @@
     background-color:lightgray;
     cursor: pointer;
 }
+
+.selector-box {
+    width: 250px;
+}
