@@ -10,13 +10,23 @@
     <h1 style="text-align: center">Guess the Artist!</h1>
   </div>
 
-  <div class="music-container">
+  <!-- <div class="music-container">
     <fa-icon
       style="color: black; font-size: 60px"
       [icon]="faPlayCircle"
     ></fa-icon>
-  </div>
+  </div> -->
 
+  <img src="https://i.scdn.co/image/ab67706f000000024a83d42ca84e63abc9413b5d" alt="">
+
+  <div style="display: grid; justify-content: center;" class="gameplay">
+    <h1>Now Playing</h1>
+  
+    <button (click)="playSong()">Play</button>
+    <button (click)="pauseSong()">Pause</button>
+    <button (click)="stopSong()">Stop</button>
+  </div>
+  <br><br>
   <div style="display: grid; justify-content: center">
     <button class="btn-group">{{ artist1 }}</button>
     <button class="btn-group">{{ artist2 }}</button>

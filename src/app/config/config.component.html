@@ -11,6 +11,7 @@
         name="difficulty"
         value="easy"
         [(ngModel)]="selectedDifficulty"
+        (change)="onDifficultyChange('easy')"
       />
       Easy
     </label>
@@ -20,6 +21,7 @@
         name="difficulty"
         value="normal"
         [(ngModel)]="selectedDifficulty"
+        (change)="onDifficultyChange('normal')"
         checked
       />
       Normal
@@ -30,6 +32,7 @@
         name="difficulty"
         value="hard"
         [(ngModel)]="selectedDifficulty"
+        (change)="onDifficultyChange('hard')"
       />
       Hard
     </label>
