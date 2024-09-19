@@ -13,15 +13,15 @@
 >
   <div *ngIf="authLoading || configLoading">Loading...</div>
   <div *ngIf="!authLoading && !configLoading">
-    Genre:
-    <select
+ 
+    <select class="selector-box"
       style="cursor: pointer"
       [(ngModel)]="selectedGenre"
       (ngModelChange)="setGenre($event)"
     >
       <option [value]=""></option>
-      <option [value]="genre" *ngFor="let genre of genres">
-        {{ genre }}
+      <option *ngFor="let genre of genres" [value]="genre.playlist_id">
+        {{ genre.name }}
       </option>
     </select>
   </div>
@@ -35,7 +35,11 @@
     margin-top: 50px;
   "
 >
-  <button routerLink="/gameplay" class="play-button">Play</button>
+  <button (click)="playGame()" class="play-button">Play</button>
 </div>
 
-<app-leaders [title]="'Top 5'" [maxEntries]="5" [showSeeMore]="false" ></app-leaders>
+<app-leaders
+  [title]="'Top 5'"
+  [maxEntries]="5"
+  [showSeeMore]="false"
+></app-leaders>

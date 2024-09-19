@@ -17,8 +17,8 @@ export class LeadersComponent implements OnInit {
 
   allPlayers: Player[] = [
     { name: "Yasunori Mitsuda", score: 3000 },
-    { name: "Yshtola", score: 2800 },
-    { name: "Audrey Horne", score: 2900 },
+    { name: "Yshtola", score: 2900 },
+    { name: "Audrey Horne", score: 2800 },
     { name: "Zero Two", score: 2700 },
     { name: "Todd Chavez", score: 2600 },
     { name: "Katniss Everdeen", score: 2500 },
