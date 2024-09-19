@@ -1,0 +1,16 @@
+.settings-page {
+  text-align: center;
+}
+
+.difficulty {
+  margin: 20px 0;
+}
+
+.difficulty label {
+  margin-right: 20px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+}

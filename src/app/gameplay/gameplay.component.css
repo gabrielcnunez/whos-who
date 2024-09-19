@@ -1,0 +1,19 @@
+
+.music-container{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 500px;
+    height: 200px;
+    background-color: lightgrey;
+    margin-bottom: 75px;
+}
+
+.btn-group{
+    width: 250px;
+    height: 60px;
+    font-size: medium;
+    background-color:lightgray;
+    cursor: pointer;
+    margin-bottom: 40px;
+}

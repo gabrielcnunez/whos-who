@@ -1,0 +1,43 @@
+<app-navigation></app-navigation>
+<div class="settings-page">
+  <h2>Settings</h2>
+  <br />
+  <br />
+  <div class="difficulty">
+    <label>Difficulty: </label>
+    <label>
+      <input
+        type="radio"
+        name="difficulty"
+        value="easy"
+        [(ngModel)]="selectedDifficulty"
+        (change)="onDifficultyChange('easy')"
+      />
+      Easy
+    </label>
+    <label>
+      <input
+        type="radio"
+        name="difficulty"
+        value="normal"
+        [(ngModel)]="selectedDifficulty"
+        (change)="onDifficultyChange('normal')"
+        checked
+      />
+      Normal
+    </label>
+    <label>
+      <input
+        type="radio"
+        name="difficulty"
+        value="hard"
+        [(ngModel)]="selectedDifficulty"
+        (change)="onDifficultyChange('hard')"
+      />
+      Hard
+    </label>
+  </div>
+  <br />
+  <br />
+  <button (click)="goToLeaderboard()">Go To Leaderboard</button>
+</div>

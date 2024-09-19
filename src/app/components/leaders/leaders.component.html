@@ -1,0 +1,24 @@
+<div class="leaders">
+  <h2>{{ title }}</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of displayedPlayers; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ player.name }}</td>
+        <td>{{ player.score }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button *ngIf="showSeeMore" (click)="showMorePlayers()">
+    See More Players
+  </button>
+</div>

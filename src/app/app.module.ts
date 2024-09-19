@@ -4,17 +4,24 @@ import { FormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 
 import { AppComponent } from "./app.component";
-import { HomeComponent } from "./home/home.component";
-import { NavigationComponent } from './components/navigation/navigation.component';
+import { ConfigComponent } from "./config/config.component";
 import { EndgameComponent } from './endgame/endgame.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from "./home/home.component";
 import { GameplayComponent } from './gameplay/gameplay.component';
+import { LeaderboardComponent } from "./leaderboard/leaderboard.component";
+import { LeadersComponent } from "./components/leaders/leaders.component";
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { AppRoutingModule } from './app-routing.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-const routes: Routes = [{ path: "", component: HomeComponent }];
+const routes: Routes = [
+  { path: "", component: HomeComponent },
+  { path: "leaderboard", component: LeaderboardComponent },
+  { path: "settings", component: ConfigComponent },
+];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavigationComponent, EndgameComponent, GameplayComponent],
+  declarations: [AppComponent, HomeComponent, NavigationComponent, EndgameComponent, GameplayComponent, LeadersComponent, LeaderboardComponent, ConfigComponent],
   imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes), FontAwesomeModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
