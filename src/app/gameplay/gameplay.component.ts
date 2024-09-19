@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { faPlayCircle, faPauseCircle  } from '@fortawesome/free-solid-svg-icons';
 import { Howl } from 'howler';
 import { GameSettingsService } from "../../services/game-settings.service";
+import { PlaylistService } from "../../services/playlist.service";
 import fetchFromSpotify, { request } from "../../services/api"
 
 @Component({
@@ -28,9 +29,11 @@ export class GameplayComponent implements OnInit {
   @Input() artist3 = 'King Gizzard and the Wizard Lizard'
   @Input() artist4 = 'Three Days Grace'
 
-  constructor(private gameSettingsService: GameSettingsService) { }
+  constructor(private gameSettingsService: GameSettingsService, private playlistService: PlaylistService) { }
   
   ngOnInit(): void {
+    this.playlist = this.playlistService.getPlaylist()
+    console.log(this.playlist)
 
     this.setMaxWrongAnswers()
     this.songUrl = 'https://p.scdn.co/mp3-preview/1de566ed732e7c2762c9c4432eb1ac3f6fa41d39?cid=06a826fc18d14c909746467bc9070b97'

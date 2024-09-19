@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core"
 import { Router } from "@angular/router"
+import { PlaylistService } from "../../services/playlist.service";
 import fetchFromSpotify, { request } from "../../services/api"
 
 const AUTH_ENDPOINT =
@@ -12,14 +13,14 @@ const TOKEN_KEY = "whos-who-access-token"
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private playlistService: PlaylistService) {}
 
   genres: { name: string; playlist_id: string }[] = []
   selectedGenre: String = ""
   selectedPlaylistId: String = ""
   authLoading: boolean = false
   configLoading: boolean = false
-  token: String = "BQBGIDvE7Dwkf1lSmQXo0lCYIXSa-DDxLjVBS-eDIV8MLK5RO6oQSNtur2seBdl2S0sdUhHeHPzP6v7CZ2faUZ3wGkfEjCxiZj7qMh6W2AMHAOGsh9Y"
+  token: String = "BQBvx2GsFIEPofJWCgNu3KthLGwt-L7vBk3i9xk7WaSx8wF8MaEXca57skJcXRwe7G0nS1ThFFZEzK6mR9BLNTdN3uS8C6vM0z7yVOhO1AtTc1awe6U"
   playlist: any
 
   ngOnInit(): void {
@@ -82,12 +83,14 @@ export class HomeComponent implements OnInit {
       this.selectedGenre = genreObj.name
       this.selectedPlaylistId = genreObj.playlist_id
     }
-    this.playlist = fetchFromSpotify({token: this.token, endpoint: "playlists/" + this.selectedGenre, params: ''})
+    fetchFromSpotify({token: this.token, endpoint: "playlists/" + this.selectedGenre, params: ''})
     .then((value) => {
-      console.log(value)
-  })
-    console.log(this.selectedGenre)
-    console.log(TOKEN_KEY)
+      this.playlistService.setPlaylist(value)
+      
+    })
+    // console.log(this.playlistService.getPlaylist())
+    // console.log(this.selectedGenre)
+    // console.log(TOKEN_KEY)
   }
 
   playGame() {
@@ -96,11 +99,7 @@ export class HomeComponent implements OnInit {
       return
     }
 
-    this.router.navigate(["/gameplay"], {
-      queryParams: {
-        genre: this.selectedGenre
-      },
-    })
+    this.router.navigate(["/gameplay"])
   }
 
 }
