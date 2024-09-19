@@ -82,7 +82,10 @@ export class HomeComponent implements OnInit {
       this.selectedGenre = genreObj.name
       this.selectedPlaylistId = genreObj.playlist_id
     }
-    
+    this.playlist = fetchFromSpotify({token: this.token, endpoint: "playlists/" + this.selectedGenre, params: ''})
+    .then((value) => {
+      console.log(value)
+  })
     console.log(this.selectedGenre)
     console.log(TOKEN_KEY)
   }
