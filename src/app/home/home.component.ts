@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   selectedGenre: String = "";
   authLoading: boolean = false;
   configLoading: boolean = false;
-  token: String = "";
+  token: String = "BQDoqNQ6PoVAFuDA8fenLjlQlQSk0M7Br_-_TZl0PO43tGiYKa87AM12q4G75U9erj9oUBpiczontBaqDyqEkU_0X6aRMhp22uf9gWmxE34G786YUYY";
 
   ngOnInit(): void {
     this.authLoading = true;
@@ -80,4 +80,9 @@ export class HomeComponent implements OnInit {
     console.log(this.selectedGenre);
     console.log(TOKEN_KEY);
   }
+
+ getPlaylist = fetchFromSpotify({token: this.token, endpoint: 'playlists/724QV8hht0guo97GC86rP4/tracks', params: ''})
+  .then((value) => {
+    console.log(value)
+  })
 }

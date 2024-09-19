@@ -4,11 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { EndgameComponent } from './endgame/endgame.component';
 import { GameplayComponent } from './gameplay/gameplay.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { ConfigComponent } from './config/config.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
-  {path: 'endgame', component: EndgameComponent},
-  {path: 'gameplay', component: GameplayComponent}
+  { path: "home", component: HomeComponent },
+  { path: 'endgame', component: EndgameComponent },
+  { path: 'gameplay', component: GameplayComponent },
+  { path: "leaderboard", component: LeaderboardComponent },
+  { path: "settings", component: ConfigComponent },
 ]
 
 @NgModule({

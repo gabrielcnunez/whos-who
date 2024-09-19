@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faPlayCircle, faPauseCircle  } from '@fortawesome/free-solid-svg-icons';
+import fetchFromSpotify from 'src/services/api';
 
 @Component({
   selector: 'app-gameplay',
@@ -21,6 +22,10 @@ export class GameplayComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    /*const getTracks = async (genre: any, t) => {
+      const result = fetchFromSpotify()
+  
+    }*/
   }
 
 }
