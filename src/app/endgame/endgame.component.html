@@ -7,17 +7,18 @@
 
   <h2>Score: {{ score }}</h2>
 
-  <form>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <input
       type="text"
       id="name"
       placeholder="Enter Player Name"
       class="input"
+      formControlName="username"
     />
   </form>
 
   <div>
-    <button class="button">Submit</button>
+    <button class="button" (click)="onSubmit()">Submit</button>
   </div>
 
   <br /><br /><br /><br /><br />

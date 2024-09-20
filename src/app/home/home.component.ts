@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   selectedPlaylistId: String = ""
   authLoading: boolean = false
   configLoading: boolean = false
-  token: String = "BQA4hUQ8MeJccyL6fteSlRIJ1WlnOQPe4PMxPEDJ_X9BwPyBwOfxGR2OD8Arbfau_Z7PG7pWXekVeodVa04ahb41SwHPTfUURosmAM0isb4uVOG4chI"
+  token: String = "BQCIxg1U906lCmjN352x4FRHmp4ymLUnb3bm8GkcSE-Y2aEeBXZGt1NwF6NkS_DGYmsipIK7E3g5IGi4wDmf1cXeG3EvS3Pjar-SC3dQy2NbuMtqG1Y"
   playlist: any
 
   ngOnInit(): void {
