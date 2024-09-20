@@ -77,6 +77,7 @@ export class GameplayComponent implements OnInit {
     this.sound = new Howl({
       src: [this.songUrl],
       html5: true,
+      volume: 0.15,
       onend: () => {
         this.songIsPlaying = false;
         console.log('Song ended.');
@@ -159,7 +160,6 @@ export class GameplayComponent implements OnInit {
     this.gameOver = true;
     this.winGame = isWin || (this.round >= 9 && this.wrongAnswers < this.maxWrongAnswers);
 
-    // Redirect to the Endgame page with winGame status and score
     this.router.navigate(['/endgame'], {
       queryParams: { win: this.winGame, score: this.score }
     });

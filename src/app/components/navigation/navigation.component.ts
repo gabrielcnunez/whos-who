@@ -10,7 +10,6 @@ export class NavigationComponent implements OnInit {
 
   faHome = faHome;
   faCog = faCog;
-  faWrench= faWrench;
 
   constructor() { }
 
