@@ -41,6 +41,7 @@ export class GameplayComponent implements OnInit {
     this.data = this.playlistService.getPlaylist()
     if (this.data) {
       this.tracks = this.data.tracks.items.filter((item: any) => item.track.preview_url !== null);
+      this.shuffleArray(this.tracks)
       this.image_url = this.data.images[0].url
       this.loadTrack(this.currentTrackIndex);
     }
