@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   selectedPlaylistId: String = ""
   authLoading: boolean = false
   configLoading: boolean = false
-  token: String = "BQBvx2GsFIEPofJWCgNu3KthLGwt-L7vBk3i9xk7WaSx8wF8MaEXca57skJcXRwe7G0nS1ThFFZEzK6mR9BLNTdN3uS8C6vM0z7yVOhO1AtTc1awe6U"
+  token: String = "BQBFhDPfhc-EJcjYjIKZv3q5WODRfAsDk0SLdtqNC90mHa3NVQzEfLp-UQjqo3yAUbX4zTjMv5STUEMUSCM6YE_5ubl0oC39MEru44lYqKyDuT3qGaM"
   playlist: any
 
   ngOnInit(): void {
@@ -86,9 +86,9 @@ export class HomeComponent implements OnInit {
     fetchFromSpotify({token: this.token, endpoint: "playlists/" + this.selectedGenre, params: ''})
     .then((value) => {
       this.playlistService.setPlaylist(value)
-      
+      console.log(value.headers)
     })
-    // console.log(this.playlistService.getPlaylist())
+    console.log(this.playlistService.getPlaylist())
     // console.log(this.selectedGenre)
     // console.log(TOKEN_KEY)
   }
