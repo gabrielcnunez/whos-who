@@ -77,6 +77,7 @@ export class GameplayComponent implements OnInit {
     this.sound = new Howl({
       src: [this.songUrl],
       html5: true,
+      volume: 0.15,
       onend: () => {
         this.songIsPlaying = false;
         console.log('Song ended.');
