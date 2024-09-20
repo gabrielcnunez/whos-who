@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   selectedPlaylistId: String = ""
   authLoading: boolean = false
   configLoading: boolean = false
-  token: String = "BQB-R6nmJ38Gc0ibrycYTndYI_wFQnZ6-eXdQNIv9FhPuar6P9tnoQs0LyLodW87H72P9m3dY95jObHQBeLAzEP4WAXVMin8UUlKMS9vI6WJNRsq_sE"
+  token: String = "BQBzYaermw9e9VOkrn9X6rh17W9L0B-shWsp90R-U1vPsVmnuDtGhTPJciV8PzfpBi0i-2djgvMjbuT9CUyjCsC5r1bpKjYC1YJ6BzpejjUjmHD6bU8"
   playlist: any
 
   ngOnInit(): void {
@@ -52,27 +52,16 @@ export class HomeComponent implements OnInit {
   loadGenres = async (t: any) => {
     this.configLoading = true
 
-    // #################################################################################
-    // DEPRECATED!!! Use only for example purposes
-    // DO NOT USE the recommendations endpoint in your application
-    // Has been known to cause 429 errors
-    // const response = await fetchFromSpotify({
-    //   token: t,
-    //   endpoint: "recommendations/available-genre-seeds",
-    // });
-    // console.log(response);
-    // #################################################################################
-
     this.genres = [
       { name: "Rock Classics", playlist_id: "37i9dQZF1DWXRqgorJj26U" },
-      { name: "Old School Hip Hop", playlist_id: "56un2laj6rmMUKhDlkUkAY" },
+      { name: "Classic Hip Hop", playlist_id: "56un2laj6rmMUKhDlkUkAY" },
       { name: "Billboard Hot 100", playlist_id: "6UeSakyzhiEt4NB3UAd6NQ" },
-      { name: "90s Country", playlist_id: "0ZSp6ra6fFvGk4vyaqQea8" },
-      { name: "Millenial Pop", playlist_id: "4KupkWcvdR4rfdd6qLjuHj" },
-      { name: "Indie", playlist_id: "37i9dQZF1EQqkOPvHGajmW" },
-      { name: "Alternative", playlist_id: "37i9dQZF1EIefLxrHQP8p4" },
-      { name: "K-Pop", playlist_id: "37i9dQZF1DX9tPFwDMOaN1" },
-      { name: "Emo", playlist_id: "37i9dQZF1DX9wa6XirBPv8" },
+      { name: "Greatest 90's Country", playlist_id: "0ZSp6ra6fFvGk4vyaqQea8" },
+      { name: "Ultimate Millenial: Pop", playlist_id: "4KupkWcvdR4rfdd6qLjuHj" },
+      { name: "Indie Mix", playlist_id: "37i9dQZF1EQqkOPvHGajmW" },
+      { name: "Alternative Rock Mix", playlist_id: "37i9dQZF1EIefLxrHQP8p4" },
+      { name: "K-Pop ON!", playlist_id: "37i9dQZF1DX9tPFwDMOaN1" },
+      { name: "Emo Forever", playlist_id: "37i9dQZF1DX9wa6XirBPv8" },
     ]
     this.configLoading = false
   }
@@ -88,9 +77,6 @@ export class HomeComponent implements OnInit {
       this.playlistService.setPlaylist(value)
 
     })
-    console.log(this.playlistService.getPlaylist())
-    // console.log(this.selectedGenre)
-    // console.log(TOKEN_KEY)
   }
 
   playGame() {
