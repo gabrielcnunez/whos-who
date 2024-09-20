@@ -160,7 +160,6 @@ export class GameplayComponent implements OnInit {
     this.gameOver = true;
     this.winGame = isWin || (this.round >= 9 && this.wrongAnswers < this.maxWrongAnswers);
 
-    // Redirect to the Endgame page with winGame status and score
     this.router.navigate(['/endgame'], {
       queryParams: { win: this.winGame, score: this.score }
     });
