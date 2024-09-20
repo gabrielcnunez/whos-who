@@ -20,33 +20,33 @@ export class HomeComponent implements OnInit {
   selectedPlaylistId: String = ""
   authLoading: boolean = false
   configLoading: boolean = false
-  token: String = "BQBFhDPfhc-EJcjYjIKZv3q5WODRfAsDk0SLdtqNC90mHa3NVQzEfLp-UQjqo3yAUbX4zTjMv5STUEMUSCM6YE_5ubl0oC39MEru44lYqKyDuT3qGaM"
+  token: String = "BQA-ULOmsqZtNr_X7RPznTBjwFWSl6mWUkAtB4TIlUeUsmy0XobRGKEjsMNTX9YOlTlR0npox6gyHNBbeu2m1SF_IF1SApsZavAG2VbFAo6_UTp2HqA"
   playlist: any
 
   ngOnInit(): void {
-    this.authLoading = true
-    const storedTokenString = localStorage.getItem(TOKEN_KEY)
-    if (storedTokenString) {
-      const storedToken = JSON.parse(storedTokenString)
-      if (storedToken.expiration > Date.now()) {
-        console.log("Token found in localstorage")
-        this.authLoading = false
-        this.token = storedToken.value
-        this.loadGenres(storedToken.value)
-        return
-      }
-    }
-    console.log("Sending request to AWS endpoint")
-    request(AUTH_ENDPOINT).then(({ access_token, expires_in }) => {
-      const newToken = {
-        value: access_token,
-        expiration: Date.now() + (expires_in - 20) * 1000,
-      }
-      localStorage.setItem(TOKEN_KEY, JSON.stringify(newToken))
-      this.authLoading = false
-      this.token = newToken.value
-      this.loadGenres(newToken.value)
-    })
+  //   this.authLoading = true
+  //   const storedTokenString = localStorage.getItem(TOKEN_KEY)
+  //   if (storedTokenString) {
+  //     const storedToken = JSON.parse(storedTokenString)
+  //     if (storedToken.expiration > Date.now()) {
+  //       console.log("Token found in localstorage")
+  //       this.authLoading = false
+  //       this.token = storedToken.value
+    this.loadGenres(this.token)
+  //       return
+  //     }
+  //   }
+  //   console.log("Sending request to AWS endpoint")
+  //   request(AUTH_ENDPOINT).then(({ access_token, expires_in }) => {
+  //     const newToken = {
+  //       value: access_token,
+  //       expiration: Date.now() + (expires_in - 20) * 1000,
+  //     }
+  //     localStorage.setItem(TOKEN_KEY, JSON.stringify(newToken))
+  //     this.authLoading = false
+  //     this.token = newToken.value
+  //     this.loadGenres(newToken.value)
+  //   })
   }
 
   loadGenres = async (t: any) => {
@@ -86,7 +86,7 @@ export class HomeComponent implements OnInit {
     fetchFromSpotify({token: this.token, endpoint: "playlists/" + this.selectedGenre, params: ''})
     .then((value) => {
       this.playlistService.setPlaylist(value)
-      console.log(value.headers)
+
     })
     console.log(this.playlistService.getPlaylist())
     // console.log(this.selectedGenre)

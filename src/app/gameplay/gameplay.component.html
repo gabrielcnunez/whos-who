@@ -1,42 +1,9 @@
 <app-navigation></app-navigation>
 
-<!-- <div style="display: flex; justify-content: end; padding-right: 75px">
-  <h3 style="padding-right: 50px">Score: {{ score }}</h3>
-  <h3>Question {{ round }}/{{ maxQuestions }}</h3>
-</div>
-
-<div style="display: grid; justify-content: center; align-items: center">
-  <div>
-    <h1 style="text-align: center">Guess the Artist!</h1>
-  </div> -->
-
-  <!-- <div class="music-container">
-    <fa-icon
-      style="color: black; font-size: 60px"
-      [icon]="faPlayCircle"
-    ></fa-icon>
-  </div> -->
-
   <img
     [src]="image_url"
     alt=""
   />
-
-  <!-- <div style="display: grid; justify-content: center" class="gameplay">
-    <h1>Now Playing</h1>
-
-    <button (click)="playSong()">Play</button>
-    <button (click)="pauseSong()">Pause</button>
-    <button (click)="stopSong()">Stop</button>
-  </div>
-  <br /><br />
-  <div style="display: grid; justify-content: center">
-    <button class="btn-group">{{ artist1 }}</button>
-    <button class="btn-group">{{ artist2 }}</button>
-    <button class="btn-group">{{ artist3 }}</button>
-    <button class="btn-group">{{ artist4 }}</button>
-  </div> -->
-<!-- </div> -->
 
 <div class="gameplay-container">
   <h1>Guess the Artist</h1>
@@ -44,7 +11,7 @@
   <!-- Score and Round Info -->
   <div class="game-info">
     <p>Score: {{ score }}</p>
-    <p>Round: {{ round }} / 20</p>
+    <p>Round: {{ round }} / 10</p>
     <p>Wrong Answers: {{ wrongAnswers }} / {{ maxWrongAnswers }}</p>
   </div>
 
@@ -64,10 +31,7 @@
   <!-- Song Choices -->
   <div class="choices">
     <h3>Who is the artist?</h3>
-    <button (click)="submitAnswer(artist1)" class="choice-button">{{ artist1 }}</button>
-    <button (click)="submitAnswer(artist2)" class="choice-button">{{ artist2 }}</button>
-    <button (click)="submitAnswer(artist3)" class="choice-button">{{ artist3 }}</button>
-    <button (click)="submitAnswer(artist4)" class="choice-button">{{ artist4 }}</button>
+    <button *ngFor="let artist of artists" (click)="submitAnswer(artist)" class="choice-button">{{ artist }}</button>
   </div>
 
   <!-- Result Feedback -->
