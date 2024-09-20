@@ -1,36 +1,41 @@
 <app-navigation></app-navigation>
 
-<div style="display: flex; justify-content: end; padding-right: 75px">
-  <h3 style="padding-right: 50px">Score: {{ score }}</h3>
-  <h3>Game: {{ round }}/20</h3>
-</div>
+  <img
+    [src]="image_url"
+    alt=""
+  />
 
-<div style="display: grid; justify-content: center; align-items: center">
-  <div>
-    <h1 style="text-align: center">Guess the Artist!</h1>
-  </div>
-
-  <!-- <div class="music-container">
-    <fa-icon
-      style="color: black; font-size: 60px"
-      [icon]="faPlayCircle"
-    ></fa-icon>
-  </div> -->
-
-  <img src="https://i.scdn.co/image/ab67706f000000024a83d42ca84e63abc9413b5d" alt="">
-
-  <div style="display: grid; justify-content: center;" class="gameplay">
-    <h1>Now Playing</h1>
+<div class="gameplay-container">
+  <h1>Guess the Artist</h1>
   
-    <button (click)="playSong()">Play</button>
-    <button (click)="pauseSong()">Pause</button>
-    <button (click)="stopSong()">Stop</button>
+  <!-- Score and Round Info -->
+  <div class="game-info">
+    <p>Score: {{ score }}</p>
+    <p>Round: {{ round }} / 10</p>
+    <p>Wrong Answers: {{ wrongAnswers }} / {{ maxWrongAnswers }}</p>
   </div>
-  <br><br>
-  <div style="display: grid; justify-content: center">
-    <button class="btn-group">{{ artist1 }}</button>
-    <button class="btn-group">{{ artist2 }}</button>
-    <button class="btn-group">{{ artist3 }}</button>
-    <button class="btn-group">{{ artist4 }}</button>
+
+  <!-- Audio Controls -->
+  <div class="audio-controls">
+    <button (click)="playSong()" class="control-button">
+      <fa-icon [icon]="faPlayCircle"></fa-icon> Play
+    </button>
+    <button (click)="pauseSong()" class="control-button">
+      <fa-icon [icon]="faPauseCircle"></fa-icon> Pause
+    </button>
+    <button (click)="stopSong()" class="control-button">
+      <fa-icon [icon]="faStopCircle"></fa-icon> Stop
+    </button>
+  </div>
+
+  <!-- Song Choices -->
+  <div class="choices">
+    <h3>Who is the artist?</h3>
+    <button *ngFor="let artist of artists" (click)="submitAnswer(artist)" class="choice-button">{{ artist }}</button>
+  </div>
+
+  <!-- Result Feedback -->
+  <div *ngIf="answerSubmitted" class="feedback">
+    <p>{{ resultMessage }}</p>
   </div>
 </div>
