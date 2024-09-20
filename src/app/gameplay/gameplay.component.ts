@@ -35,11 +35,6 @@ export class GameplayComponent implements OnInit {
   faPauseCircle = faPauseCircle;
   faStopCircle = faStopCircle
 
-  @Input() artist1 = 'Yaosobi';
-  @Input() artist2 = 'Taylor Swift';
-  @Input() artist3 = 'King Gizzard and the Wizard Lizard';
-  @Input() artist4 = 'Three Days Grace';
-
   constructor(private router: Router, private gameSettingsService: GameSettingsService, private playlistService: PlaylistService) { }
 
   ngOnInit(): void {
@@ -51,6 +46,13 @@ export class GameplayComponent implements OnInit {
     }
 
     this.setMaxWrongAnswers();
+  }
+
+  ngOnDestroy(): void {
+    if (this.sound) {
+      this.sound.stop();
+    }
+    this.playlistService.setPlaylist(null)
   }
 
   setMaxWrongAnswers() {
