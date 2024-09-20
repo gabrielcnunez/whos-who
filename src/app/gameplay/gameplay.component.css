@@ -11,6 +11,8 @@
 }
 
 img {
+  width: 300px;
+  height: 300px;
   margin: 10px 0; 
   max-width: 80%;
 }
