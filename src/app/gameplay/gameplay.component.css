@@ -1,19 +1,101 @@
-
-.music-container{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    width: 500px;
-    height: 200px;
-    background-color: lightgrey;
-    margin-bottom: 75px;
+/* Container for the entire gameplay page */
+.gameplay-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 10px; /* Tighter padding */
+  box-sizing: border-box;
 }
 
-.btn-group{
-    width: 250px;
-    height: 60px;
-    font-size: medium;
-    background-color:lightgray;
-    cursor: pointer;
-    margin-bottom: 40px;
+img {
+  margin: 10px 0; /* Tighter spacing for the image */
+  max-width: 80%;
+}
+
+/* Styling for the game information (score, round, wrong answers) on one line */
+.game-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between each element */
+  margin-bottom: 10px; /* Reduced margin */
+  text-align: center;
+}
+
+/* Controls for the audio buttons */
+.audio-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 250px; /* Tighter width */
+  margin: 10px 0; /* Reduced margin */
+}
+
+/* Buttons for play, pause, stop */
+.control-button {
+  padding: 8px 16px; /* Smaller padding */
+  font-size: 14px; /* Slightly smaller font */
+  cursor: pointer;
+  background-color: lightgray;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.control-button:hover {
+  background-color: gray;
+}
+
+/* Section for artist choice buttons on one line */
+.choices {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+  width: 100%;
+  flex-wrap: wrap; /* Ensures buttons will wrap if necessary */
+}
+
+.choice-button {
+  margin: 5px 0; /* Tighter margin */
+  padding: 8px 16px; /* Smaller padding */
+  font-size: 14px; /* Slightly smaller font */
+  cursor: pointer;
+  background-color: lightgray;
+  border: none;
+  border-radius: 4px;
+  width: 150px; /* Smaller width */
+}
+
+.choice-button:hover {
+  background-color: gray;
+}
+
+/* Feedback after the user submits an answer */
+.feedback {
+  margin-top: 10px; /* Reduced margin */
+  font-size: 16px; /* Slightly smaller font */
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Existing music container style */
+.music-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 500px;
+  height: 150px; /* Reduced height */
+  background-color: lightgrey;
+  margin-bottom: 50px; /* Reduced margin */
+}
+
+/* Existing button group style */
+.btn-group {
+  width: 200px; /* Smaller width */
+  height: 50px; /* Smaller height */
+  font-size: medium;
+  background-color: lightgray;
+  cursor: pointer;
+  margin-bottom: 30px; /* Reduced margin */
 }
