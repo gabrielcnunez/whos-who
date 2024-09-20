@@ -84,10 +84,11 @@ export class GameplayComponent implements OnInit {
   }
 
   getArtists(): string[] {
-    const allArtists = this.tracks
-      .map((track: any) => track.track.artists[0].name)
-      .filter((name: string) => name !== this.correctArtist);
-    const randomArtists = this.shuffleArray(allArtists).slice(0, 3);
+    const uniqueArtists = new Set<string>(
+      this.tracks.map((track: any) => track.track.artists[0].name)
+    );
+    uniqueArtists.delete(this.correctArtist);
+    const randomArtists = this.shuffleArray(Array.from(uniqueArtists)).slice(0, 3);
 
     return this.shuffleArray([this.correctArtist, ...randomArtists]);
   }
