@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-endgame',
@@ -6,14 +7,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./endgame.component.css']
 })
 export class EndgameComponent implements OnInit {
+  condition: boolean = false;
+  score: number = 0;
 
-  @Input() score = 0;
-
-  public condition = false;
-
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      this.condition = params['win'] === 'true';
+      this.score = +params['score'];
+    });
   }
-
 }

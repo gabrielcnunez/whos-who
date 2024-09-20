@@ -25,7 +25,7 @@ export class GameplayComponent implements OnInit {
   selectedGenre: string = '';
   songIsPlaying: boolean = false;
   score: number = 0
-  round: number = 0
+  round: number = 1
   gameOver: boolean = false;
   winGame: boolean = false;
   answerSubmitted: boolean = false;
@@ -155,7 +155,12 @@ export class GameplayComponent implements OnInit {
 
   endGame(isWin: boolean = false) {
     this.gameOver = true;
-    this.winGame = isWin || (this.round >= 19 && this.wrongAnswers < this.maxWrongAnswers);
+    this.winGame = isWin || (this.round >= 9 && this.wrongAnswers < this.maxWrongAnswers);
+
+    // Redirect to the Endgame page with winGame status and score
+    this.router.navigate(['/endgame'], {
+      queryParams: { win: this.winGame, score: this.score }
+    });
   }
 
   restartGame() {
