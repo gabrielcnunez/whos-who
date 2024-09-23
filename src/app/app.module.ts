@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 
 import { AppComponent } from "./app.component";
@@ -22,7 +23,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, NavigationComponent, EndgameComponent, GameplayComponent, LeadersComponent, LeaderboardComponent, ConfigComponent],
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes), FontAwesomeModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), FontAwesomeModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

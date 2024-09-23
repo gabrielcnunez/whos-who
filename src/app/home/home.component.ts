@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   selectedPlaylistId: String = ""
   authLoading: boolean = false
   configLoading: boolean = false
-  token: String = "BQBFNEj91IcLFmWStFO_an9QFOQ6QGHHZKRiFnre1pjFtJFC2bMDdFNlwWvFAq-ONXHj77KAnSDfV9PCdBSNITQRldKSKZDpoLv0fEv6oCeHYRo-WB8"
+  token: String = "BQDfR42dcQLyvZg2eDHlSNYH7lwf84qBoFbaIzUKBnYAkqCjkKXsFaUkX9tORYZPUkfZ8yENSRgnUEYxAu7S-5RewETIkXMgnpUDFp5Z4j1pbbAA8Q8"
   playlist: any
 
   ngOnInit(): void {
@@ -75,7 +75,6 @@ export class HomeComponent implements OnInit {
     fetchFromSpotify({token: this.token, endpoint: "playlists/" + this.selectedGenre, params: ''})
     .then((value) => {
       this.playlistService.setPlaylist(value)
-
     })
   }
 
@@ -84,7 +83,7 @@ export class HomeComponent implements OnInit {
       alert("Please select a genre before playing!")
       return
     }
-
+    console.log(this.playlistService.getPlaylist())
     this.router.navigate(["/gameplay"])
   }
 
