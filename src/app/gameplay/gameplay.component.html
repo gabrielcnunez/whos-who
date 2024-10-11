@@ -4,7 +4,7 @@
     alt=""
   />
 
-  <h1>Guess the Artist</h1>
+  <h2>Guess the Artist</h2>
   
   <!-- Score and Round Info -->
   <div class="game-info">
@@ -28,7 +28,7 @@
 
   <!-- Song Choices -->
   <div class="choices">
-    <h3>Who is the artist?</h3>
+    <h3>Who's the artist?</h3>
     <button *ngFor="let artist of artists" (click)="submitAnswer(artist)" class="choice-button">{{ artist }}</button>
   </div>
 
