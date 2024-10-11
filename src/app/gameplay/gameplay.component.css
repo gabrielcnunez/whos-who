@@ -4,8 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: 100vh;
-  margin: 0 auto;
+  height: auto;
   padding: 10px; 
   box-sizing: border-box;
 }
@@ -22,7 +21,6 @@ img {
   display: flex;
   justify-content: center;
   gap: 20px; 
-  margin-bottom: 10px; 
   text-align: center;
 }
 
