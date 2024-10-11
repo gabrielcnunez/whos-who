@@ -1,8 +1,24 @@
 .nav-bar-container{
     display: flex;
-    margin-bottom: 50px;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
     justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 25px;
+    height: 75px;
+}
+
+.title-container {
+    flex: none;
+}
+
+.icon-container {
+    position: absolute;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-icon {
+    color: black;
+    font-size: 25px;
 }
