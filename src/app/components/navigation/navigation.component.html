@@ -1,7 +1,6 @@
-<router-outlet></router-outlet>
 <div class="nav-bar-container">
   <div style="position: relative; align-items: center; justify-self: center">
-    <h1>Who's Who</h1>
+    <h1 *ngIf="!isHomePage">Who's Who</h1>
   </div>
 
   <div style="position: absolute; right: 0; padding-right: 75px">
