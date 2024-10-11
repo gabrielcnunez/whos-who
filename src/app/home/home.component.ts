@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
         return
       }
     }
-    console.log("Sending request to AWS endpoint")
+    console.log("Sending request to Google Cloud endpoint")
     request(AUTH_ENDPOINT).then(({ access_token, expires_in }) => {
       const newToken = {
         value: access_token,
