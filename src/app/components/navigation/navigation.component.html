@@ -1,17 +1,17 @@
 <div class="nav-bar-container">
-  <div style="position: relative; align-items: center; justify-self: center">
+  <div class="title-container">
     <h1 *ngIf="!isHomePage">Who's Who</h1>
   </div>
 
-  <div style="position: absolute; right: 0; padding-right: 75px">
-    <a routerLink="/home" style="padding-right: 20px">
-      <fa-icon style="color: black; font-size: 25px" [icon]="faHome"></fa-icon>
+  <div class="icon-container">
+    <a routerLink="/home">
+      <fa-icon class="nav-icon" [icon]="faHome"></fa-icon>
     </a>
-    <a routerLink="/leaderboard" style="padding-right: 20px">
-      <fa-icon style="color: black; font-size: 25px" [icon]="faTrophy"></fa-icon>
+    <a routerLink="/leaderboard">
+      <fa-icon class="nav-icon" [icon]="faTrophy"></fa-icon>
     </a>
     <a routerLink="/settings">
-      <fa-icon style="color: black; font-size: 25px" [icon]="faCog"></fa-icon>
+      <fa-icon class="nav-icon" [icon]="faCog"></fa-icon>
     </a>
   </div>
 </div>
