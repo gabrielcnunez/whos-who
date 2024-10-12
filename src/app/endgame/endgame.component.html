@@ -1,8 +1,8 @@
 <router-outlet></router-outlet>
 
 <div class="container">
-  <h1 *ngIf="condition === false" style="color: red">Game Over</h1>
-  <h1 *ngIf="condition === true" style="color: green">You Win!</h1>
+  <h1 *ngIf="won" style="color: green">You Win!</h1>
+  <h1 *ngIf="!won" style="color: red">Game Over</h1>
 
   <h2>Score: {{ score }}</h2>
 
@@ -20,7 +20,7 @@
     <button class="button" (click)="onSubmit()">Submit</button>
   </div>
 
-  <br /><br /><br /><br /><br />
+  <br />
 
   <div>
     <button class="button" routerLink="/gameplay">Play Again</button>
