@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router"
 import { FormControl, FormGroup } from "@angular/forms"
 import { Router } from "@angular/router"
 import { LeaderboardService } from "../../services/leaderboard.service"
+import { PlaylistService } from "src/services/playlist.service";
 
 @Component({
   selector: "app-endgame",
@@ -22,7 +23,8 @@ export class EndgameComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private leaderboardService: LeaderboardService
+    private leaderboardService: LeaderboardService,
+    private playlistService: PlaylistService
   ) {}
 
   ngOnInit(): void {
@@ -31,7 +33,6 @@ export class EndgameComponent implements OnInit {
       this.score = +params["score"]
       this.userForm.patchValue({ score: this.score })
     })
-    console.log(this.playerSubmitted)
   }
 
   onSubmit() {
@@ -48,5 +49,9 @@ export class EndgameComponent implements OnInit {
 
       alert("Your score was already submitted!")
     }
+  }
+
+  returnHome() {
+    this.playlistService.setPlaylist(null)
   }
 }

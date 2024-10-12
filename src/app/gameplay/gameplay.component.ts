@@ -53,7 +53,6 @@ export class GameplayComponent implements OnInit {
     if (this.sound) {
       this.sound.stop();
     }
-    this.playlistService.setPlaylist(null)
   }
 
   setMaxWrongAnswers() {
