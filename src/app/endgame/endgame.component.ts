@@ -12,6 +12,7 @@ import { LeaderboardService } from "../../services/leaderboard.service"
 export class EndgameComponent implements OnInit {
   won: boolean = false
   score: number = 0
+  playerSubmitted: boolean = false
 
   userForm: FormGroup = new FormGroup({
     username: new FormControl(""),
@@ -30,16 +31,22 @@ export class EndgameComponent implements OnInit {
       this.score = +params["score"]
       this.userForm.patchValue({ score: this.score })
     })
+    console.log(this.playerSubmitted)
   }
 
   onSubmit() {
-    const player = {
-      name: this.userForm.get("username")?.value,
-      score: this.score,
+    if (!this.playerSubmitted) {
+      const player = {
+        name: this.userForm.get("username")?.value,
+        score: this.score,
+      }
+      this.leaderboardService.addPlayer(player)
+      this.playerSubmitted = true
+
+      alert("Score submitted to leaderboard!")
+    } else {
+
+      alert("Your score was already submitted!")
     }
-
-    this.leaderboardService.addPlayer(player)
-
-    alert("Score Submitted to Leaderboard!")
   }
 }
