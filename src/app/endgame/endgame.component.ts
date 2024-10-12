@@ -10,7 +10,7 @@ import { LeaderboardService } from "../../services/leaderboard.service"
   styleUrls: ["./endgame.component.css"],
 })
 export class EndgameComponent implements OnInit {
-  condition: boolean = false
+  won: boolean = false
   score: number = 0
 
   userForm: FormGroup = new FormGroup({
@@ -26,7 +26,7 @@ export class EndgameComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
-      this.condition = params["win"] === "true"
+      this.won = params["win"] === "true"
       this.score = +params["score"]
       this.userForm.patchValue({ score: this.score })
     })
