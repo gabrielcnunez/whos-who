@@ -82,8 +82,6 @@ export class HomeComponent implements OnInit {
     fetchFromSpotify({token: this.token, endpoint: "playlists/" + this.selectedPlaylistId, params: ''})
     .then((value) => {
       this.playlistService.setPlaylist(value)
-      console.log(this.playlistService.getPlaylist())
-
       this.router.navigate(["/gameplay"])
     })
   }

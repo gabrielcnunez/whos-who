@@ -22,7 +22,6 @@ export class NavigationComponent implements OnInit {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
       this.isHomePage = event.url === '/' || event.url === '/home';
-      console.log(this.isHomePage)
     });
   }
 
