@@ -21,7 +21,7 @@ export class NavigationComponent implements OnInit {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
-      this.isHomePage = event.url === '/' || event.url === '/home';
+      this.isHomePage = event.url === '/';
     });
   }
 
