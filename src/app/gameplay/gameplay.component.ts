@@ -67,7 +67,7 @@ export class GameplayComponent implements OnInit {
   }
 
   fetchMoreTracks(playlistId: string) {
-    fetchFromSpotify({token: this.token, endpoint: "playlists/" + this.data.id + "/tracks?offset=100", params: ''})
+    fetchFromSpotify({token: this.token, endpoint: `playlists/${playlistId}/tracks?offset=100`, params: ''})
       .then((value) => {
         const tracks = this.filterPreviewTracks(value.items)
         this.tracks.push(...tracks)
