@@ -24,6 +24,7 @@ export class GameplayComponent implements OnInit {
   tracks: any[] = [];
   currentTrackIndex: number = 0;
   artists: string[] = [];
+  lastArtist: string = ''
   correctArtist: string = '';
   selectedGenre: string = '';
   songIsPlaying: boolean = false;
@@ -67,7 +68,7 @@ export class GameplayComponent implements OnInit {
   }
 
   fetchMoreTracks(playlistId: string) {
-    fetchFromSpotify({token: this.token, endpoint: "playlists/" + this.data.id + "/tracks?offset=100", params: ''})
+    fetchFromSpotify({token: this.token, endpoint: `playlists/${playlistId}/tracks?offset=100`, params: ''})
       .then((value) => {
         const tracks = this.filterPreviewTracks(value.items)
         this.tracks.push(...tracks)
@@ -91,12 +92,20 @@ export class GameplayComponent implements OnInit {
   }
 
   loadTrack(index: number) {
+    console.log(index)
     if (this.sound) {
       this.sound.unload();
     }
-    const track = this.tracks[index].track;
+    let track = this.tracks[index].track;
+
+    while (track.artists[0].name === this.lastArtist) {
+      index++
+      track = this.tracks[index].track
+    }
+    this.currentTrackIndex = index
     this.songUrl = track.preview_url;
     this.correctArtist = track.artists[0].name;
+    this.lastArtist = track.artists[0].name
     this.artists = this.getArtists()
 
     this.sound = new Howl({
