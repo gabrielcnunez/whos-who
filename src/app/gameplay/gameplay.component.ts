@@ -1,9 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { faPlayCircle, faPauseCircle, faStopCircle } from '@fortawesome/free-solid-svg-icons';
 import { Howl } from 'howler';
+import fetchFromSpotify from 'src/services/api'; "src/services/api";
 import { GameSettingsService } from "../../services/game-settings.service";
 import { PlaylistService } from "../../services/playlist.service";
 import { Router } from "@angular/router";
+
+const TOKEN_KEY = "whos-who-access-token"
 
 @Component({
   selector: 'app-gameplay',
@@ -17,7 +20,7 @@ export class GameplayComponent implements OnInit {
   sound!: Howl;
   data: any;
   image_url: string = ''
-  token: String = 'YOUR_SPOTIFY_TOKEN';
+  token: String = '';
   tracks: any[] = [];
   currentTrackIndex: number = 0;
   artists: string[] = [];
@@ -38,15 +41,37 @@ export class GameplayComponent implements OnInit {
   constructor(private router: Router, private gameSettingsService: GameSettingsService, private playlistService: PlaylistService) { }
 
   ngOnInit(): void {
+    const storedTokenString = localStorage.getItem(TOKEN_KEY)
+    if (storedTokenString) {
+      const storedToken = JSON.parse(storedTokenString)
+        this.token = storedToken.value
+    }
+    
     this.data = this.playlistService.getPlaylist()
     if (this.data) {
-      this.tracks = this.data.tracks.items.filter((item: any) => item.track.preview_url !== null);
-      this.shuffleArray(this.tracks)
-      this.image_url = this.data.images[0].url
-      this.loadTrack(this.currentTrackIndex);
+      this.tracks = this.filterPreviewTracks(this.data.tracks.items)
+
+    if (this.data.tracks.next) {
+      this.fetchMoreTracks(this.data.id)
     }
 
+    this.shuffleArray(this.tracks)
     this.setMaxWrongAnswers();
+    this.image_url = this.data.images[0].url
+    this.loadTrack(this.currentTrackIndex);
+    }
+  }
+
+  filterPreviewTracks(items: any[]) {
+    return items.filter((item: any) => item.track.preview_url !== null)
+  }
+
+  fetchMoreTracks(playlistId: string) {
+    fetchFromSpotify({token: this.token, endpoint: "playlists/" + this.data.id + "/tracks?offset=100", params: ''})
+      .then((value) => {
+        const tracks = this.filterPreviewTracks(value.items)
+        this.tracks.push(...tracks)
+      })
   }
 
   ngOnDestroy(): void {
