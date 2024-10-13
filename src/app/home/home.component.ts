@@ -68,25 +68,23 @@ export class HomeComponent implements OnInit {
 
   setGenre(selectedPlaylistId: string) {
     const genreObj = this.genres.find((g) => g.playlist_id === selectedPlaylistId)
-
     if (genreObj) {
       this.selectedGenre = genreObj.name
       this.selectedPlaylistId = genreObj.playlist_id
     }
-    fetchFromSpotify({token: this.token, endpoint: "playlists/" + this.selectedPlaylistId, params: ''})
-    .then((value) => {
-      this.playlistService.setPlaylist(value)
-      console.log(this.playlistService.getPlaylist())
-    })
   }
-
+  
   playGame() {
     if (!this.selectedPlaylistId) {
       alert("Please select a genre before playing!")
       return
     }
-    console.log(this.playlistService.getPlaylist())
-    this.router.navigate(["/gameplay"])
-  }
+    fetchFromSpotify({token: this.token, endpoint: "playlists/" + this.selectedPlaylistId, params: ''})
+    .then((value) => {
+      this.playlistService.setPlaylist(value)
+      console.log(this.playlistService.getPlaylist())
 
+      this.router.navigate(["/gameplay"])
+    })
+  }
 }
