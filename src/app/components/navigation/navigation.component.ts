@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { faHome, faCog, faTrophy } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faWrench, faTrophy } from '@fortawesome/free-solid-svg-icons';
 import { filter } from 'rxjs/operators';
 
 @Component({
@@ -12,7 +12,7 @@ export class NavigationComponent implements OnInit {
   isHomePage: boolean = false
 
   faHome = faHome;
-  faCog = faCog;
+  faWrench = faWrench;
   faTrophy = faTrophy;
 
   constructor(private router: Router) { }
