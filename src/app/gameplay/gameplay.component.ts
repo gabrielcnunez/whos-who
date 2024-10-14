@@ -24,7 +24,7 @@ export class GameplayComponent implements OnInit {
   tracks: any[] = [];
   currentTrackIndex: number = 0;
   artists: string[] = [];
-  lastArtist: string = ''
+  played: string[] = []
   correctArtist: string = '';
   selectedGenre: string = '';
   songIsPlaying: boolean = false;
@@ -92,20 +92,23 @@ export class GameplayComponent implements OnInit {
   }
 
   loadTrack(index: number) {
-    console.log(index)
     if (this.sound) {
       this.sound.unload();
     }
     let track = this.tracks[index].track;
-
-    while (track.artists[0].name === this.lastArtist) {
+    let artistName = track.artists[0].name
+    
+    while (this.played.includes(artistName)) {
       index++
       track = this.tracks[index].track
+      artistName = track.artists[0].name
     }
+    console.log(index)
+    console.log(artistName)
     this.currentTrackIndex = index
     this.songUrl = track.preview_url;
-    this.correctArtist = track.artists[0].name;
-    this.lastArtist = track.artists[0].name
+    this.correctArtist = artistName
+    this.played.push(artistName)
     this.artists = this.getArtists()
 
     this.sound = new Howl({
