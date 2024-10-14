@@ -1,19 +1,13 @@
-<h1 style="text-align: center">Welcome to Who's Who!</h1>
-<h2 style="text-align: center">Choose a Genre to Play</h2>
+<div class="title-text">
+  <h1>Welcome to Who's Who!</h1>
+  <h2>Choose a Genre to Play</h2>
+</div>
 
-<div
-  style="
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    padding-top: 20px;
-  "
->
+<div class="selector-area">
   <div *ngIf="authLoading || configLoading">Loading...</div>
   <div *ngIf="!authLoading && !configLoading">
  
     <select class="selector-box"
-      style="cursor: pointer"
       [(ngModel)]="selectedPlaylistId"
       (ngModelChange)="setGenre($event)"
     >
@@ -25,15 +19,10 @@
   </div>
 </div>
 
-<div
-  style="
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    margin-top: 50px;
-  "
->
-  <button (click)="playGame()" class="play-button">Play</button>
+<div class="play-area">
+  <button (click)="playGame()" class="play-button">
+    <fa-icon class="nav-icon" [icon]="faPlay"></fa-icon>Play
+  </button>
 </div>
 
 <app-leaders

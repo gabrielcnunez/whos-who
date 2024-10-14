@@ -1,4 +1,29 @@
-.play-button{
+.title-text {
+    text-align: center;
+}
+
+.selector-area {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-top: 20px;
+}
+.selector-box {
+    width: 250px;
+    cursor: pointer;
+}
+
+.play-area {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 50px;
+}
+
+.play-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 250px;
     height: 50px;
     font-size: large;
@@ -6,6 +31,8 @@
     cursor: pointer;
 }
 
-.selector-box {
-    width: 250px;
+.nav-icon {
+    color: black;
+    font-size: 20px;
+    margin-right: 10px;
 }

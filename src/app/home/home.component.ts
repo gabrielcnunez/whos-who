@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core"
 import { Router } from "@angular/router"
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { PlaylistService } from "../../services/playlist.service";
 import fetchFromSpotify, { request } from "../../services/api"
 
@@ -13,8 +14,7 @@ const TOKEN_KEY = "whos-who-access-token"
   styleUrls: ["./home.component.css"],
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router, private playlistService: PlaylistService) {}
-
+  
   genres: { name: string; playlist_id: string }[] = []
   selectedGenre: String = ""
   selectedPlaylistId: String = ""
@@ -22,6 +22,10 @@ export class HomeComponent implements OnInit {
   configLoading: boolean = false
   token: String = "";
   playlist: any
+
+  faPlay = faPlay
+
+  constructor(private router: Router, private playlistService: PlaylistService) {}
 
   ngOnInit(): void {
     this.authLoading = true
