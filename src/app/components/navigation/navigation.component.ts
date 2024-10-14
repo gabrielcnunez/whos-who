@@ -9,11 +9,11 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
+  isHomePage: boolean = false
 
   faHome = faHome;
   faCog = faCog;
   faTrophy = faTrophy;
-  isHomePage: boolean = false
 
   constructor(private router: Router) { }
 
