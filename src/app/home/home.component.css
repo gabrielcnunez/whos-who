@@ -1,3 +1,25 @@
+.title-text {
+    text-align: center;
+}
+
+.selector-area {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-top: 20px;
+}
+.selector-box {
+    width: 250px;
+    cursor: pointer;
+}
+
+.play-area {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 50px;
+}
+
 .play-button {
     display: flex;
     justify-content: center;
@@ -7,10 +29,6 @@
     font-size: large;
     background-color:lightgray;
     cursor: pointer;
-}
-
-.selector-box {
-    width: 250px;
 }
 
 .nav-icon {
