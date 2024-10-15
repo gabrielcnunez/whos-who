@@ -28,3 +28,11 @@
     color: black;
     font-size: 25px;
 }
+
+.dark-icon {
+    color: white;
+}
+
+.light-icon {
+    color: black;
+}

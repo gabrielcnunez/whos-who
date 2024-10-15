@@ -8,13 +8,13 @@
 
   <div class="icon-container">
     <a routerLink="/">
-      <fa-icon class="nav-icon" [icon]="faHome"></fa-icon>
+      <fa-icon class="nav-icon" [icon]="faHome" [ngClass]="{'dark-icon': isDarkMode, 'light-icon': !isDarkMode}"></fa-icon>
     </a>
     <a routerLink="/leaderboard">
-      <fa-icon class="nav-icon" [icon]="faTrophy"></fa-icon>
+      <fa-icon class="nav-icon" [icon]="faTrophy" [ngClass]="{'dark-icon': isDarkMode, 'light-icon': !isDarkMode}"></fa-icon>
     </a>
     <a routerLink="/settings">
-      <fa-icon class="nav-icon" [icon]="faWrench"></fa-icon>
+      <fa-icon class="nav-icon" [icon]="faWrench" [ngClass]="{'dark-icon': isDarkMode, 'light-icon': !isDarkMode}"></fa-icon>
     </a>
   </div>
 </div>
