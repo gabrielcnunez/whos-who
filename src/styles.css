@@ -1,5 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --background-color: white;
+  --text-color: black;
+  --icon-color: black;
+}
+
 .dark-theme {
-  background-color: #121212;
-  color: #ffffff;
+  --background-color: #282828;
+  --text-color: white;
+  --icon-color: #4cc1da;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 300;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
