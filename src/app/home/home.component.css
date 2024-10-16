@@ -9,6 +9,9 @@
     padding-top: 20px;
 }
 .selector-box {
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    color: var(--border-color);
     width: 250px;
     cursor: pointer;
 }
