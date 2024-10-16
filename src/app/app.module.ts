@@ -14,6 +14,7 @@ import { LeadersComponent } from "./components/leaders/leaders.component";
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DarkModeToggleComponent } from './components/dark-mode-toggle/dark-mode-toggle.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -22,7 +23,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavigationComponent, EndgameComponent, GameplayComponent, LeadersComponent, LeaderboardComponent, ConfigComponent],
+  declarations: [AppComponent, HomeComponent, NavigationComponent, EndgameComponent, GameplayComponent, LeadersComponent, LeaderboardComponent, ConfigComponent, DarkModeToggleComponent],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(routes), FontAwesomeModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

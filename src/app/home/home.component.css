@@ -9,6 +9,9 @@
     padding-top: 20px;
 }
 .selector-box {
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    color: var(--border-color);
     width: 250px;
     cursor: pointer;
 }
@@ -27,12 +30,17 @@
     width: 250px;
     height: 50px;
     font-size: large;
-    background-color:lightgray;
+    color: var(--text-color);
+    background-color: var(--button-color);
+    transition: background-color 0.3s;
     cursor: pointer;
 }
 
+.play-button:hover {
+    background-color: var(--button-hover-color);
+  }
+
 .nav-icon {
-    color: black;
     font-size: 20px;
     margin-right: 10px;
 }

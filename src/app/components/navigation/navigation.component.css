@@ -7,6 +7,12 @@
     height: 75px;
 }
 
+.dark-mode-icon {
+    position: absolute;
+    left: 30px;
+    display: flex;
+}
+
 .title-container {
     flex: none;
 }
@@ -19,6 +25,5 @@
 }
 
 .nav-icon {
-    color: black;
     font-size: 25px;
 }
