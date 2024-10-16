@@ -2,7 +2,6 @@
   cursor: pointer;
 }
 
-fa-icon {
-  color: var(--icon-color);
+.nav-icon {
   font-size: 25px;
 }
