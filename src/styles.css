@@ -1,6 +1,8 @@
 :root {
   --background-color: white;
   --border-color: #282828;
+  --button-color: lightgray;
+  --button-hover-color: gray;
   --text-color: black;
   --icon-color: black;
   --icon-hover-color: #4cc1da;
@@ -9,6 +11,8 @@
 .dark-theme {
   --background-color: #282828;
   --border-color: #4cc1da;
+  --button-color: #575757;
+  --button-hover-color: #717171;
   --text-color: white;
   --icon-color: #4cc1da;
   --icon-hover-color: white;
