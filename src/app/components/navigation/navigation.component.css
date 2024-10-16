@@ -25,14 +25,6 @@
 }
 
 .nav-icon {
-    color: black;
+    color: var(--icon-color);
     font-size: 25px;
-}
-
-.dark-icon {
-    color: white;
-}
-
-.light-icon {
-    color: black;
 }
