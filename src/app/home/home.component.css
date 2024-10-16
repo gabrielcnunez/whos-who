@@ -30,9 +30,15 @@
     width: 250px;
     height: 50px;
     font-size: large;
-    background-color:lightgray;
+    color: var(--text-color);
+    background-color: var(--button-color);
+    transition: background-color 0.3s;
     cursor: pointer;
 }
+
+.play-button:hover {
+    background-color: var(--button-hover-color);
+  }
 
 .nav-icon {
     font-size: 20px;
