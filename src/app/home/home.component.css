@@ -23,6 +23,8 @@
     margin-top: 50px;
 }
 
+
+
 .play-button {
     display: flex;
     justify-content: center;
@@ -32,9 +34,26 @@
     font-size: large;
     color: var(--text-color);
     background-color: var(--button-color);
+    border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+    animation: 3.5s spin linear infinite;
     transition: background-color 0.3s;
     cursor: pointer;
 }
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  @keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+  }
 
 .play-button:hover {
     background-color: var(--button-hover-color);
