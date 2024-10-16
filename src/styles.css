@@ -6,6 +6,7 @@
   --text-color: black;
   --icon-color: black;
   --icon-hover-color: #4cc1da;
+  --icon-shadow: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.35))
 }
 
 .dark-theme {
@@ -16,6 +17,7 @@
   --text-color: white;
   --icon-color: #4cc1da;
   --icon-hover-color: white;
+  --icon-shadow: none;
 }
 
 body {
@@ -28,6 +30,7 @@ body {
 .nav-icon {
   color: var(--icon-color);
   transition: color 0.3s ease;
+  filter: var(--icon-shadow);
 }
 
 .nav-icon:hover {
