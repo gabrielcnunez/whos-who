@@ -29,11 +29,20 @@
   <!-- Song Choices -->
   <div class="choices">
     <h3>Who's the artist?</h3>
-    <button *ngFor="let artist of artists" (click)="submitAnswer(artist)" class="choice-button">{{ artist }}</button>
+    <button *ngFor="let artist of artists"
+            (click)="submitAnswer(artist)"
+            [ngClass]="{
+              'correct-answer': selectedAnswer && artist === correctArtist && selectedAnswer === artist,
+              'wrong-answer': selectedAnswer && artist !== correctArtist && selectedAnswer === artist,
+              'faded': selectedAnswer && artist !== correctArtist && selectedAnswer !== artist
+            }"
+            class="choice-button">
+      {{ selectedAnswer === artist ? resultMessage : artist }}
+    </button>
   </div>
 
   <!-- Result Feedback -->
-  <div *ngIf="answerSubmitted" class="feedback">
+  <!-- <div *ngIf="answerSubmitted" class="feedback">
     <p>{{ resultMessage }}</p>
   </div>
-</div>
+</div> -->

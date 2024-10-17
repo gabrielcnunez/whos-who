@@ -26,6 +26,8 @@ export class GameplayComponent implements OnInit {
   artists: string[] = [];
   played: string[] = []
   correctArtist: string = '';
+  selectedAnswer: string = '';
+  isCorrectAnswer: boolean = false;
   selectedGenre: string = '';
   songIsPlaying: boolean = false;
   score: number = 0
@@ -161,8 +163,10 @@ export class GameplayComponent implements OnInit {
   submitAnswer(selectedArtist: string) {
     this.stopSong();
     this.answerSubmitted = true;
+    this.selectedAnswer = selectedArtist
+    this.isCorrectAnswer = (selectedArtist === this.correctArtist)
 
-    if (selectedArtist === this.correctArtist) {
+    if (this.isCorrectAnswer) {
       this.score += 300;
       this.resultMessage = "Correct!";
     } else {
@@ -181,7 +185,9 @@ export class GameplayComponent implements OnInit {
   }
 
   nextTrack() {
-    if (this.round < 10) { 
+    if (this.round < 10) {
+      this.selectedAnswer = ''
+      this.isCorrectAnswer = false
       this.answerSubmitted = false;
       this.currentTrackIndex++;
       this.round++;

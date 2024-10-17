@@ -74,6 +74,36 @@ img {
   background-color: var(--button-hover-color);
 }
 
+.correct-answer {
+  background-color: lightgreen;
+  
+  border: 4px solid transparent; /* Initial transparent border */
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 3.5s spin linear infinite;
+}
+
+.wrong-answer {
+  background-color: red;
+}
+
+.faded {
+  opacity: 0.5;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
 
 .feedback {
   margin-top: 10px; 
