@@ -27,9 +27,14 @@ body {
   color: var(--text-color);
 }
 
-button {
+button, input {
   font-family: "Overpass";
   font-weight: 500;
+}
+
+td {
+  font-family: "Overpass";
+  font-weight: 300;
 }
 
 .nav-icon {
