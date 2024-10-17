@@ -9,6 +9,7 @@
     padding-top: 20px;
 }
 .selector-box {
+    font-family: "Overpass";
     background-color: var(--background-color);
     border-color: var(--border-color);
     color: var(--border-color);
@@ -22,8 +23,6 @@
     display: flex;
     margin-top: 50px;
 }
-
-
 
 .play-button {
     display: flex;
