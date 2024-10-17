@@ -27,6 +27,16 @@ body {
   color: var(--text-color);
 }
 
+button, input {
+  font-family: "Overpass";
+  font-weight: 500;
+}
+
+td {
+  font-family: "Overpass";
+  font-weight: 300;
+}
+
 .nav-icon {
   color: var(--icon-color);
   transition: color 0.3s ease;
