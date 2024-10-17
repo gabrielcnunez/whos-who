@@ -21,8 +21,9 @@
 }
 
 body {
-  font-family: "Rubik", sans-serif;
-  font-weight: 300;
+  font-family: "Exo";
+  font-weight: 700;
+  font-style: italic;
   background-color: var(--background-color);
   color: var(--text-color);
 }
@@ -30,11 +31,13 @@ body {
 button, input {
   font-family: "Overpass";
   font-weight: 500;
+  font-style: normal;
 }
 
 td {
   font-family: "Overpass";
   font-weight: 300;
+  font-style: normal;
 }
 
 .nav-icon {
