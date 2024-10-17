@@ -51,7 +51,6 @@ export class GameplayComponent implements OnInit {
     this.data = this.playlistService.getPlaylist()
     if (this.data) {
       this.tracks = this.filterPreviewTracks(this.data.tracks.items)
-
     if (this.data.tracks.next) {
       this.fetchMoreTracks(this.data.id)
     }
@@ -103,8 +102,7 @@ export class GameplayComponent implements OnInit {
       track = this.tracks[index].track
       artistName = track.artists[0].name
     }
-    console.log(index)
-    console.log(artistName)
+    
     this.currentTrackIndex = index
     this.songUrl = track.preview_url;
     this.correctArtist = artistName
