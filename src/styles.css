@@ -27,6 +27,11 @@ body {
   color: var(--text-color);
 }
 
+button {
+  font-family: "Overpass";
+  font-weight: 500;
+}
+
 .nav-icon {
   color: var(--icon-color);
   transition: color 0.3s ease;
