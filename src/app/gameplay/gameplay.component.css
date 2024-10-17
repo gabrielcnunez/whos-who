@@ -75,7 +75,7 @@ img {
 }
 
 .correct-answer {
-  background-color: lightgreen;
+  background-color: green;
   
   border: 4px solid transparent; /* Initial transparent border */
   border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
