@@ -13,7 +13,7 @@
     font-size: large;
 }
 
-.button {
+button {
     margin: 20px;
     width: 250px;
     height: 50px;
@@ -24,7 +24,7 @@
     cursor: pointer;
 }
 
-.button:hover {
+button:hover {
     background-color: var(--button-hover-color);
 }
 
