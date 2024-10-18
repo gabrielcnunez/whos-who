@@ -1,4 +1,4 @@
-.container{
+.container {
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -13,10 +13,17 @@
     font-size: large;
 }
 
-.button{
+.button {
     margin: 20px;
     width: 250px;
     height: 50px;
-    background-color:lightgray;
+    font-size: large;
+    color: var(--text-color);
+    background-color: var(--button-color);
+    transition: background-color 0.3s;
     cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--button-hover-color);
 }
