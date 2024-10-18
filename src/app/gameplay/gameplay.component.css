@@ -74,31 +74,46 @@ img {
   background-color: var(--button-hover-color);
 }
 
-
-.feedback {
-  margin-top: 10px; 
-  font-size: 16px; 
-  font-weight: bold;
-  text-align: center;
+.correct-answer-selected {
+  background-color: #32CD32;
+  border: 4px solid transparent;
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 3.5s spin linear infinite;
 }
 
-
-.music-container {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  width: 500px;
-  height: 150px;
-  background-color: lightgrey;
-  margin-bottom: 50px; 
+.correct-answer-not-selected {
+  border: 4px solid transparent;
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 3.5s spin linear infinite;
 }
 
+.wrong-answer {
+  background-color: red;
+}
 
-.btn-group {
-  width: 200px; 
-  height: 50px; 
-  font-size: medium;
-  background-color: lightgray;
-  cursor: pointer;
-  margin-bottom: 30px; 
+.faded {
+  opacity: 0.5;
+}
+
+.disable-hover {
+  pointer-events: none;
+}
+
+.disable-hover:hover {
+  background-color: var(--button-color);
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
 }
