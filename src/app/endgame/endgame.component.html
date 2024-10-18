@@ -17,15 +17,21 @@
   </form>
 
   <div>
-    <button class="button" (click)="onSubmit()">Submit</button>
+    <button class="button" (click)="onSubmit()">
+      <fa-icon class="nav-icon" [icon]="faTrophy"></fa-icon>Submit
+    </button>
   </div>
 
   <br />
 
   <div>
-    <button class="button" routerLink="/gameplay">Play Again</button>
+    <button class="button" routerLink="/gameplay">
+      <fa-icon class="nav-icon" [icon]="faPlay"></fa-icon>Play Again?
+    </button>
   </div>
   <div>
-    <button class="button" (click)="returnHome()" routerLink="/home">Home</button>
+    <button class="button" (click)="returnHome()" routerLink="/home">
+      <fa-icon class="nav-icon" [icon]="faHome"></fa-icon>Home
+    </button>
   </div>
 </div>

@@ -27,3 +27,8 @@
 .button:hover {
     background-color: var(--button-hover-color);
 }
+
+.nav-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
