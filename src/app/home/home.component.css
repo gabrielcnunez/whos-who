@@ -62,4 +62,5 @@
 .nav-icon {
     font-size: 20px;
     margin-right: 10px;
+    filter: none;
 }
