@@ -74,10 +74,15 @@ img {
   background-color: var(--button-hover-color);
 }
 
-.correct-answer {
+.correct-answer-selected {
   background-color: green;
-  
-  border: 4px solid transparent; /* Initial transparent border */
+  border: 4px solid transparent;
+  border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 3.5s spin linear infinite;
+}
+
+.correct-answer-not-selected {
+  border: 4px solid transparent;
   border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
   animation: 3.5s spin linear infinite;
 }
@@ -88,6 +93,16 @@ img {
 
 .faded {
   opacity: 0.5;
+}
+
+/* Disable hover effect during the timeout */
+.disable-hover {
+  pointer-events: none; /* Disable interaction */
+}
+
+/* This ensures hover effect is removed during the timeout */
+.disable-hover:hover {
+  background-color: var(--button-color); /* Revert to original background without hover */
 }
 
 @property --angle {

@@ -32,9 +32,11 @@
     <button *ngFor="let artist of artists"
             (click)="submitAnswer(artist)"
             [ngClass]="{
-              'correct-answer': selectedAnswer && artist === correctArtist && selectedAnswer === artist,
+              'correct-answer-selected': selectedAnswer && artist === correctArtist && selectedAnswer === artist,
+              'correct-answer-not-selected': selectedAnswer && artist === correctArtist && selectedAnswer !== artist,
               'wrong-answer': selectedAnswer && artist !== correctArtist && selectedAnswer === artist,
-              'faded': selectedAnswer && artist !== correctArtist && selectedAnswer !== artist
+              'faded': selectedAnswer && artist !== correctArtist && selectedAnswer !== artist,
+              'disable-hover': answerSubmitted
             }"
             class="choice-button">
       {{ selectedAnswer === artist ? resultMessage : artist }}
