@@ -75,7 +75,7 @@ img {
 }
 
 .correct-answer-selected {
-  background-color: green;
+  background-color: #32CD32;
   border: 4px solid transparent;
   border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
   animation: 3.5s spin linear infinite;
