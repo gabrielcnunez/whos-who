@@ -8,6 +8,7 @@
     display: flex;
     padding-top: 20px;
 }
+
 .selector-box {
     font-family: "Overpass";
     background-color: var(--background-color);
@@ -39,26 +40,27 @@
     cursor: pointer;
 }
 
-@property --angle{
+@property --angle {
     syntax: "<angle>";
     initial-value: 0deg;
     inherits: false;
-  }
+}
   
-  @keyframes spin{
+@keyframes spin {
     from{
         --angle: 0deg;
     }
     to{
         --angle: 360deg;
     }
-  }
+}
 
 .play-button:hover {
     background-color: var(--button-hover-color);
-  }
+}
 
 .nav-icon {
     font-size: 20px;
     margin-right: 10px;
+    filter: none;
 }
