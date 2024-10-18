@@ -6,7 +6,8 @@
   --text-color: black;
   --icon-color: black;
   --icon-hover-color: #4cc1da;
-  --icon-shadow: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.35))
+  --icon-shadow: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.35));
+  --table-color: #ddd;
 }
 
 .dark-theme {
@@ -18,6 +19,7 @@
   --icon-color: #4cc1da;
   --icon-hover-color: white;
   --icon-shadow: none;
+  --table-color: #4cc1da;
 }
 
 body {
