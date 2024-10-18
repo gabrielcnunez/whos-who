@@ -95,14 +95,12 @@ img {
   opacity: 0.5;
 }
 
-/* Disable hover effect during the timeout */
 .disable-hover {
-  pointer-events: none; /* Disable interaction */
+  pointer-events: none;
 }
 
-/* This ensures hover effect is removed during the timeout */
 .disable-hover:hover {
-  background-color: var(--button-color); /* Revert to original background without hover */
+  background-color: var(--button-color);
 }
 
 @property --angle {

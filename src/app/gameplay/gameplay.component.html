@@ -6,14 +6,12 @@
 
   <h2>Guess the Artist</h2>
   
-  <!-- Score and Round Info -->
   <div class="game-info">
     <p>Score: {{ score }}</p>
     <p>Round: {{ round }} / 10</p>
     <p>Wrong Answers: {{ wrongAnswers }} / {{ maxWrongAnswers }}</p>
   </div>
 
-  <!-- Audio Controls -->
   <div class="audio-controls">
     <button (click)="playSong()" class="control-button">
       <fa-icon [icon]="faPlayCircle"></fa-icon> Play
@@ -26,7 +24,6 @@
     </button>
   </div>
 
-  <!-- Song Choices -->
   <div class="choices">
     <h3>Who's the artist?</h3>
     <button *ngFor="let artist of artists"
