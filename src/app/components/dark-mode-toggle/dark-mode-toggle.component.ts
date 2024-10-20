@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
-import { faSun } from "@fortawesome/free-regular-svg-icons";
+import { faSun,faMoon } from "@fortawesome/free-solid-svg-icons";
 import { ThemeService } from "src/services/theme.service";
 import { Subscription } from "rxjs";
 
