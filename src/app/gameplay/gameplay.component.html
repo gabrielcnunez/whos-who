@@ -23,17 +23,20 @@
       <fa-icon [icon]="faStopCircle"></fa-icon> Stop
     </button>
   </div>
-  
-  <div class="volume-control">
-    <input
-      id="volume"
-      type="range"
-      min="0"
-      max="1"
-      step="0.01"
-      [(ngModel)]="volume"
-      (input)="setVolume(volume)"
-    />
+
+  <div class="slider-container">
+    <fa-icon class="slider-icon" [icon]="faVolumeDown"></fa-icon>
+      <input
+        class="slider"
+        id="volume"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        [(ngModel)]="volume"
+        (input)="setVolume(volume)"
+      />
+    <fa-icon class="slider-icon" [icon]="faVolumeUp"></fa-icon>
   </div>
 
   <div class="choices">

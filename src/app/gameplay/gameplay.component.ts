@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faPlayCircle, faPauseCircle, faStopCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPlayCircle, faPauseCircle, faStopCircle, faVolumeDown, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 import { Howl } from 'howler';
 import fetchFromSpotify from 'src/services/api'; "src/services/api";
 import { GameSettingsService } from "../../services/game-settings.service";
@@ -41,6 +41,8 @@ export class GameplayComponent implements OnInit {
   faPlayCircle = faPlayCircle;
   faPauseCircle = faPauseCircle;
   faStopCircle = faStopCircle
+  faVolumeDown = faVolumeDown
+  faVolumeUp = faVolumeUp
 
   constructor(private router: Router, private gameSettingsService: GameSettingsService, private playlistService: PlaylistService) { }
 
