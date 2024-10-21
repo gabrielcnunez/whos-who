@@ -46,7 +46,7 @@ export class GameplayComponent implements OnInit {
 
   constructor(private router: Router, private gameSettingsService: GameSettingsService, private playlistService: PlaylistService) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     const storedTokenString = localStorage.getItem(TOKEN_KEY)
     if (storedTokenString) {
       const storedToken = JSON.parse(storedTokenString)
@@ -56,9 +56,10 @@ export class GameplayComponent implements OnInit {
     this.data = this.playlistService.getPlaylist()
     if (this.data) {
       this.tracks = this.filterPreviewTracks(this.data.tracks.items)
-    if (this.data.tracks.next) {
-      this.fetchMoreTracks(this.data.id)
-    }
+
+      if (this.data.tracks.next) {
+        await this.fetchMoreTracks(this.data.id)
+      }
 
     this.shuffleArray(this.tracks)
     this.setMaxWrongAnswers();
@@ -71,18 +72,10 @@ export class GameplayComponent implements OnInit {
     return items.filter((item: any) => item.track.preview_url !== null)
   }
 
-  fetchMoreTracks(playlistId: string) {
-    fetchFromSpotify({token: this.token, endpoint: `playlists/${playlistId}/tracks?offset=100`, params: ''})
-      .then((value) => {
-        const tracks = this.filterPreviewTracks(value.items)
-        this.tracks.push(...tracks)
-      })
-  }
-
-  ngOnDestroy(): void {
-    if (this.sound) {
-      this.sound.stop();
-    }
+  async fetchMoreTracks(playlistId: string): Promise<void> {
+    const value = await fetchFromSpotify({ token: this.token, endpoint: `playlists/${playlistId}/tracks?offset=100`, params: '' });
+    const tracks = this.filterPreviewTracks(value.items);
+    this.tracks.push(...tracks);
   }
 
   setMaxWrongAnswers() {
@@ -94,7 +87,7 @@ export class GameplayComponent implements OnInit {
       this.maxWrongAnswers = 2;
     }
   }
-
+  
   loadTrack(index: number) {
     if (this.sound) {
       this.sound.unload();
@@ -113,7 +106,7 @@ export class GameplayComponent implements OnInit {
     this.correctArtist = artistName
     this.played.push(artistName)
     this.artists = this.getArtists()
-
+    
     this.sound = new Howl({
       src: [this.songUrl],
       html5: true,
@@ -125,17 +118,17 @@ export class GameplayComponent implements OnInit {
     });
     this.playSong();
   }
-
+  
   getArtists(): string[] {
     const uniqueArtists = new Set<string>(
       this.tracks.map((track: any) => track.track.artists[0].name)
     );
     uniqueArtists.delete(this.correctArtist);
     const randomArtists = this.shuffleArray(Array.from(uniqueArtists)).slice(0, 3);
-
+    
     return this.shuffleArray([this.correctArtist, ...randomArtists]);
   }
-
+  
   shuffleArray(array: any[]): any[] {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -143,36 +136,36 @@ export class GameplayComponent implements OnInit {
     }
     return array;
   }
-
+  
   playSong() {
     if (!this.songIsPlaying) {
       this.sound.play();
       this.songIsPlaying = true;
     }
   }
-
+  
   pauseSong() {
     if (this.songIsPlaying) {
       this.sound.pause();
       this.songIsPlaying = false;
     }
   }
-
+  
   stopSong() {
     this.sound.stop();
     this.songIsPlaying = false;
   }
-
+  
   setVolume(volume: number) {
     this.sound.volume(volume)
   }
-
+  
   submitAnswer(selectedArtist: string) {
     this.stopSong();
     this.answerSubmitted = true;
     this.selectedAnswer = selectedArtist
     this.isCorrectAnswer = (selectedArtist === this.correctArtist)
-
+    
     if (this.isCorrectAnswer) {
       this.score += 300;
       this.resultMessage = "Correct!";
@@ -184,13 +177,13 @@ export class GameplayComponent implements OnInit {
         return;
       }
     }
-
+    
     setTimeout(() => {
       this.answerSubmitted = false;
       this.nextTrack();
     }, 2000);
   }
-
+  
   nextTrack() {
     if (this.round < 10) {
       this.selectedAnswer = ''
@@ -203,16 +196,16 @@ export class GameplayComponent implements OnInit {
       this.endGame(true);
     }
   }
-
+  
   endGame(isWin: boolean = false) {
     this.gameOver = true;
     this.winGame = isWin || (this.round >= 9 && this.wrongAnswers < this.maxWrongAnswers);
-
+    
     this.router.navigate(['/endgame'], {
       queryParams: { win: this.winGame, score: this.score }
     });
   }
-
+  
   restartGame() {
     this.score = 0;
     this.wrongAnswers = 0;
@@ -220,5 +213,11 @@ export class GameplayComponent implements OnInit {
     this.gameOver = false;
     this.winGame = false;
     this.loadTrack(0);
+  }
+
+  ngOnDestroy(): void {
+    if (this.sound) {
+      this.sound.stop();
+    }
   }
 }
