@@ -54,6 +54,7 @@ img {
 
 .slider-icon {
   font-size: 20px;
+  color: var(--icon-color);
 }
 
 .slider {
