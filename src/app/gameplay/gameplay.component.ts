@@ -18,6 +18,7 @@ export class GameplayComponent implements OnInit {
   wrongAnswers: number = 0;
   songUrl: string = '';
   sound!: Howl;
+  volume: number = 0.15
   data: any;
   image_url: string = ''
   token: String = '';
@@ -114,7 +115,7 @@ export class GameplayComponent implements OnInit {
     this.sound = new Howl({
       src: [this.songUrl],
       html5: true,
-      volume: 0.15,
+      volume: this.volume,
       onend: () => {
         this.songIsPlaying = false;
         console.log('Song ended.');
@@ -158,6 +159,10 @@ export class GameplayComponent implements OnInit {
   stopSong() {
     this.sound.stop();
     this.songIsPlaying = false;
+  }
+
+  setVolume(volume: number) {
+    this.sound.volume(volume)
   }
 
   submitAnswer(selectedArtist: string) {
