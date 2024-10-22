@@ -24,6 +24,21 @@
     </button>
   </div>
 
+  <div class="slider-container">
+    <fa-icon class="slider-icon" [icon]="faVolumeDown"></fa-icon>
+      <input
+        class="slider"
+        id="volume"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        [(ngModel)]="volume"
+        (input)="setVolume(volume)"
+      />
+    <fa-icon class="slider-icon" [icon]="faVolumeUp"></fa-icon>
+  </div>
+
   <div class="choices">
     <h3>Who's the artist?</h3>
     <button *ngFor="let artist of artists"
@@ -39,3 +54,4 @@
       {{ selectedAnswer === artist ? resultMessage : artist }}
     </button>
   </div>
+</div>

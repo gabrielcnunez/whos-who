@@ -10,8 +10,8 @@
 }
 
 img {
-  width: 275px;
-  height: 275px;
+  width: 300px;
+  height: 300px;
   margin-bottom: 10px;
   max-width: 80%;
 }
@@ -46,6 +46,19 @@ img {
 
 .control-button:hover {
   background-color: var(--button-hover-color);
+}
+
+.slider-container {
+  display: flex;
+}
+
+.slider-icon {
+  font-size: 20px;
+  color: var(--icon-color);
+}
+
+.slider {
+  margin: 0px 5px 0px 5px;
 }
 
 
