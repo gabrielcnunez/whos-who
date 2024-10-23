@@ -68,7 +68,7 @@ h2 {
 .slider {
   -webkit-appearance: none;
   width: 200px;
-  height: 10px;
+  height: 6px;
   outline: none;
   border: 2px solid var(--icon-color);
   border-radius: 10px;
