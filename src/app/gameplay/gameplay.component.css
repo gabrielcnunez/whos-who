@@ -16,6 +16,9 @@ img {
   max-width: 80%;
 }
 
+h2 {
+  margin: 10px;
+}
 
 .game-info {
   display: flex;
@@ -24,6 +27,13 @@ img {
   text-align: center;
 }
 
+.game-values {
+  display: inline-block;
+  width: 45px;
+  text-align: right;
+  font-family: "Overpass";
+  font-weight: 300;
+}
 
 .audio-controls {
   display: flex;
@@ -65,7 +75,7 @@ img {
 .slider {
   -webkit-appearance: none;
   width: 200px;
-  height: 10px;
+  height: 6px;
   outline: none;
   border: 2px solid var(--icon-color);
   border-radius: 10px;
@@ -98,7 +108,7 @@ img {
   background: var(--background-color);
   border: 2px solid var(--icon-color);
   border-radius: 50%;
-  cursor: pointer;
+  cursor: grab;
   margin-top: -5px;
   position: relative;
   z-index: 1;
@@ -108,10 +118,10 @@ img {
   appearance: none;
   width: 20px;
   height: 20px;
-  background: var(--button-hover-color);
-  border: 2px solid var(--button-hover-color);
+  background: var(--background-color);
+  border: 2px solid var(--icon-color);
   border-radius: 50%;
-  cursor: pointer;
+  cursor: grab;
   margin-top: -5px;
   position: relative;
   z-index: 1;
@@ -120,14 +130,14 @@ img {
 .choices {
   display: flex;
   justify-content: center;
-  margin: 5px 0px;
+  margin: 10px 0px;
   gap: 10px; 
   width: 100%;
   flex-wrap: wrap; 
 }
 
 .choice-button {
-  margin: 5px 0; 
+  min-height: 52px;
   padding: 8px 16px;
   font-size: 14px; 
   cursor: pointer;

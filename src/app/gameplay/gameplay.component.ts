@@ -147,6 +147,7 @@ export class GameplayComponent implements OnInit {
   playSong() {
     if (!this.songIsPlaying) {
       this.sound.play();
+      this.sound.fade(0, this.volume, 500)
       this.songIsPlaying = true;
     }
   }
@@ -171,7 +172,7 @@ export class GameplayComponent implements OnInit {
   }
   
   submitAnswer(selectedArtist: string) {
-    this.stopSong();
+    this.sound.fade(this.volume, 0, 250)
     this.answerSubmitted = true;
     this.selectedAnswer = selectedArtist
     this.isCorrectAnswer = (selectedArtist === this.correctArtist)
@@ -187,11 +188,14 @@ export class GameplayComponent implements OnInit {
         return;
       }
     }
+    setTimeout(() => {
+      this.stopSong();
+    }, 250)
     
     setTimeout(() => {
       this.answerSubmitted = false;
       this.nextTrack();
-    }, 2000);
+    }, 1750)
   }
   
   nextTrack() {
