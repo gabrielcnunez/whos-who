@@ -27,6 +27,10 @@ h2 {
   text-align: center;
 }
 
+.game-values {
+  font-family: "Overpass";
+  font-weight: 400;
+}
 
 .audio-controls {
   display: flex;
