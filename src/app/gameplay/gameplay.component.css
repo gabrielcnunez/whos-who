@@ -28,8 +28,11 @@ h2 {
 }
 
 .game-values {
+  display: inline-block;
+  width: 45px;
+  text-align: right;
   font-family: "Overpass";
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .audio-controls {
