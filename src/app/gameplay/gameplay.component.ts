@@ -147,7 +147,7 @@ export class GameplayComponent implements OnInit {
   playSong() {
     if (!this.songIsPlaying) {
       this.sound.play();
-      this.sound.fade(0, this.volume, 500)
+      this.sound.fade(0, this.volume, 750)
       this.songIsPlaying = true;
     }
   }
