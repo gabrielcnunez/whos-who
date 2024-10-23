@@ -172,7 +172,7 @@ export class GameplayComponent implements OnInit {
   }
   
   submitAnswer(selectedArtist: string) {
-    this.stopSong();
+    this.sound.fade(this.volume, 0, 250)
     this.answerSubmitted = true;
     this.selectedAnswer = selectedArtist
     this.isCorrectAnswer = (selectedArtist === this.correctArtist)
@@ -188,6 +188,9 @@ export class GameplayComponent implements OnInit {
         return;
       }
     }
+    setTimeout(() => {
+      this.stopSong();
+    }, 250)
     
     setTimeout(() => {
       this.answerSubmitted = false;
