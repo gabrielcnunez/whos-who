@@ -53,6 +53,11 @@ export class GameplayComponent implements OnInit {
         this.token = storedToken.value
     }
     
+    const slider = document.getElementById('volume') as HTMLInputElement;
+    if (slider) {
+      slider.style.setProperty('--value', this.volume.toString());
+    }
+    
     this.data = this.playlistService.getPlaylist()
     if (this.data) {
       this.tracks = this.filterPreviewTracks(this.data.tracks.items)
@@ -116,6 +121,7 @@ export class GameplayComponent implements OnInit {
         console.log('Song ended.');
       }
     });
+
     this.playSong();
   }
   
@@ -158,6 +164,9 @@ export class GameplayComponent implements OnInit {
   
   setVolume(volume: number) {
     this.sound.volume(volume)
+    const slider = document.getElementById('volume') as HTMLInputElement
+
+    slider.style.setProperty('--value', volume.toString())
   }
   
   submitAnswer(selectedArtist: string) {
