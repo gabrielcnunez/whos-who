@@ -18,7 +18,7 @@ export class GameplayComponent implements OnInit {
   wrongAnswers: number = 0;
   songUrl: string = '';
   sound!: Howl;
-  volume: number = 0.15
+  volume: number = 0.30
   data: any;
   image_url: string = ''
   token: String = '';
