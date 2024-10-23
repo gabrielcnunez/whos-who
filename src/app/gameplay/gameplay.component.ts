@@ -18,7 +18,7 @@ export class GameplayComponent implements OnInit {
   wrongAnswers: number = 0;
   songUrl: string = '';
   sound!: Howl;
-  volume: number = 0.15
+  volume: number = 0.30
   data: any;
   image_url: string = ''
   token: String = '';
@@ -52,7 +52,7 @@ export class GameplayComponent implements OnInit {
       const storedToken = JSON.parse(storedTokenString)
         this.token = storedToken.value
     }
-    
+    this.setVolume()
     this.data = this.playlistService.getPlaylist()
     if (this.data) {
       this.tracks = this.filterPreviewTracks(this.data.tracks.items)
@@ -65,6 +65,12 @@ export class GameplayComponent implements OnInit {
     this.setMaxWrongAnswers();
     this.image_url = this.data.images[0].url
     this.loadTrack(this.currentTrackIndex);
+    }
+  }
+  setVolume(): void {
+    const slider = document.getElementById('volume') as HTMLInputElement;
+    if (slider) {
+      slider.style.setProperty('--value', this.volume.toString());
     }
   }
 
@@ -116,6 +122,7 @@ export class GameplayComponent implements OnInit {
         console.log('Song ended.');
       }
     });
+
     this.playSong();
   }
   
@@ -156,8 +163,11 @@ export class GameplayComponent implements OnInit {
     this.songIsPlaying = false;
   }
   
-  setVolume(volume: number) {
+  changeVolume(volume: number) {
     this.sound.volume(volume)
+    const slider = document.getElementById('volume') as HTMLInputElement
+
+    slider.style.setProperty('--value', volume.toString())
   }
   
   submitAnswer(selectedArtist: string) {
