@@ -3,7 +3,7 @@
     [src]="image_url"
     alt=""
   />
-
+  
   <div class="game-info">
     <p>Score: {{ score }}</p>
     <p>Round: {{ round }} / 10</p>
@@ -37,8 +37,9 @@
     <fa-icon class="slider-icon" [icon]="faVolumeUp"></fa-icon>
   </div>
 
+  <h2>Who's the artist?</h2>
+
   <div class="choices">
-    <h3>Who's the artist?</h3>
     <button *ngFor="let artist of artists"
             (click)="submitAnswer(artist)"
             [ngClass]="{
