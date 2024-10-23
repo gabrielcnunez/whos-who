@@ -63,16 +63,15 @@ img {
 
 .slider {
   -webkit-appearance: none;
-  width: 150px;
+  width: 200px;
   height: 10px;
-  background: var(--background-color);
   outline: none;
-  border: 2px solid var(--button-hover-color);
+  border: 2px solid var(--icon-color);
   border-radius: 10px;
   position: relative;
   background: linear-gradient(
     to right, 
-    gray calc(var(--value) * 100%), 
+    var(--icon-color) calc(var(--value) * 100%), 
     var(--background-color) 0%
   );
 }
@@ -95,8 +94,8 @@ img {
   appearance: none;
   width: 20px;
   height: 20px;
-  background: var(--button-hover-color);
-  border: 2px solid var(--button-hover-color);
+  background: var(--background-color);
+  border: 2px solid var(--icon-color);
   border-radius: 50%;
   cursor: pointer;
   margin-top: -5px;
