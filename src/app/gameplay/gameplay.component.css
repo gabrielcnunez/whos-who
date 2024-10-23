@@ -123,7 +123,7 @@ h2 {
 .choices {
   display: flex;
   justify-content: center;
-  margin: 5px 0px;
+  margin: 10px 0px;
   gap: 10px; 
   width: 100%;
   flex-wrap: wrap; 
@@ -131,7 +131,6 @@ h2 {
 
 .choice-button {
   min-height: 52px;
-  margin: 5px 0; 
   padding: 8px 16px;
   font-size: 14px; 
   cursor: pointer;
