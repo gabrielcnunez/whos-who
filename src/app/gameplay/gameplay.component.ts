@@ -195,7 +195,7 @@ export class GameplayComponent implements OnInit {
     setTimeout(() => {
       this.answerSubmitted = false;
       this.nextTrack();
-    }, 2000);
+    }, 1750)
   }
   
   nextTrack() {
