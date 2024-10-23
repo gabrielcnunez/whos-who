@@ -52,6 +52,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 5px 0px;
   gap: 5px
 }
 
@@ -119,6 +120,7 @@ img {
 .choices {
   display: flex;
   justify-content: center;
+  margin: 5px 0px;
   gap: 10px; 
   width: 100%;
   flex-wrap: wrap; 
