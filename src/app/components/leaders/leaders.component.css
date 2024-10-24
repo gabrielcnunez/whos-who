@@ -8,7 +8,7 @@
   text-align: center;
 }
 
-.leaders-heading {
+h2 {
   background: linear-gradient(90deg, red, yellow, lime, aqua, blue, magenta, red);
   background-size: 2000%;
   -webkit-background-clip: text; 
