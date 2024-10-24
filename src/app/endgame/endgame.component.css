@@ -14,8 +14,8 @@
 }
 
 button {
-    margin: 20px;
-    width: 250px;
+    margin: 10px;
+    width: 200px;
     height: 50px;
     font-size: large;
     color: var(--text-color);
