@@ -18,6 +18,21 @@ img {
 
 h2 {
   margin: 10px;
+  background: linear-gradient(90deg, red, yellow, lime, aqua, blue, magenta, red);
+  background-size: 2000%;
+  -webkit-background-clip: text; 
+  background-clip: text; 
+  color: transparent;
+  animation: scroll-gradient 8s linear infinite;
+}
+
+@keyframes scroll-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .game-info {
