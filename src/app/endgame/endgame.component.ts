@@ -42,19 +42,27 @@ export class EndgameComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.playerSubmitted) {
-      const player = {
-        name: this.userForm.get("username")?.value,
-        score: this.score,
-      }
-      this.leaderboardService.addPlayer(player)
-      this.playerSubmitted = true
+    const usernameControl = this.userForm.get("username");
 
-      alert("Score submitted to leaderboard!")
-    } else {
-
-      alert("Your score was already submitted!")
+    if (this.playerSubmitted) {
+      alert("Your score was already submitted!");
+      return;
     }
+    if (!usernameControl || usernameControl.value.trim().length === 0) {
+      alert("Player name cannot be blank!");
+      return;
+    }
+
+    const player = {
+      name: usernameControl.value,
+      score: this.score,
+    };
+
+    this.leaderboardService.addPlayer(player);
+    this.playerSubmitted = true;
+
+    alert("Score submitted to leaderboard!");
+    usernameControl.reset();
   }
 
   returnHome() {
