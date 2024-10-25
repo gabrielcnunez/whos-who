@@ -7,16 +7,53 @@
     align-items: center;
     display: flex;
     padding-top: 20px;
-}
-
-.selector-box {
-    font-family: "Overpass";
-    background-color: var(--background-color);
-    border-color: var(--border-color);
-    color: var(--border-color);
+  }
+  
+  .custom-select {
     width: 250px;
+    position: relative;
     cursor: pointer;
-}
+    font-family: "Overpass";
+    font-style: normal;
+  }
+  
+  .selected-option {
+    background-color: var(--button-color);
+    border: 2px solid var(--border-color);
+    color: var(--border-color);
+    padding: 10px;
+    text-align: center;
+    /* border-radius: 4px; */
+    transition: background-color 0.3s;
+  }
+  
+  .selected-option:hover {
+    background-color: var(--button-hover-color);
+  }
+  
+  .options {
+    position: absolute;
+    width: 100%;
+    background-color: var(--background-color);
+    border: 2px solid var(--border-color);
+    border-top: none;
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 4px 4px;
+  }
+  
+  .option {
+    padding: 5px;
+    color: var(--border-color);
+    transition: background-color 0.3s;
+    text-align: center;
+  }
+  
+  .option:hover {
+    background-color: var(--button-hover-color);
+  }
 
 .play-area {
     justify-content: center;

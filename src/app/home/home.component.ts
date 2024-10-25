@@ -15,6 +15,7 @@ const TOKEN_KEY = "whos-who-access-token"
 })
 export class HomeComponent implements OnInit {
   
+  dropdownOpen = false
   genres: { name: string; playlist_id: string }[] = []
   selectedGenre: String = ""
   selectedPlaylistId: String = ""
@@ -68,6 +69,14 @@ export class HomeComponent implements OnInit {
       { name: "Emo Forever", playlist_id: "37i9dQZF1DX9wa6XirBPv8" },
     ]
     this.configLoading = false
+  }
+
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+  
+  closeDropdown() {
+    this.dropdownOpen = false;
   }
 
   setGenre(selectedPlaylistId: string) {
