@@ -3,13 +3,11 @@
     [src]="image_url"
     alt=""
   />
-
-  <h2>Guess the Artist</h2>
   
   <div class="game-info">
-    <p>Score: {{ score }}</p>
-    <p>Round: {{ round }} / 10</p>
-    <p>Wrong Answers: {{ wrongAnswers }} / {{ maxWrongAnswers }}</p>
+    <p>Score: <span class="game-values">{{ score }}</span></p>
+    <p>Round: <span class="game-values">{{ round }} / 10</span></p>
+    <p>Wrong Answers: <span class="game-values">{{ wrongAnswers }} / {{ maxWrongAnswers }}</span></p>
   </div>
 
   <div class="audio-controls">
@@ -24,8 +22,24 @@
     </button>
   </div>
 
+  <div class="slider-container">
+    <fa-icon class="slider-icon" [icon]="faVolumeDown"></fa-icon>
+      <input
+        class="slider"
+        id="volume"
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        [(ngModel)]="volume"
+        (input)="changeVolume(volume)"
+      />
+    <fa-icon class="slider-icon" [icon]="faVolumeUp"></fa-icon>
+  </div>
+
+  <h2>Who's the artist?</h2>
+
   <div class="choices">
-    <h3>Who's the artist?</h3>
     <button *ngFor="let artist of artists"
             (click)="submitAnswer(artist)"
             [ngClass]="{
@@ -39,3 +53,4 @@
       {{ selectedAnswer === artist ? resultMessage : artist }}
     </button>
   </div>
+</div>
