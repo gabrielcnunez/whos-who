@@ -8,6 +8,11 @@
   <div *ngIf="!authLoading && !configLoading" class="custom-select">
     <div class="selected-option" (click)="toggleDropdown()">
       {{ selectedGenre || "Select a genre" }}
+      <fa-icon
+        [icon]="faCaretDown"
+        [ngClass]="{'caret-up': dropdownOpen}"
+        class="caret-icon"
+      ></fa-icon>
     </div>
     <div class="options-list" *ngIf="dropdownOpen">
       <div
