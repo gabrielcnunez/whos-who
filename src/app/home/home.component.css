@@ -28,10 +28,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--border-color);
+    color: var(--text-color);
 }
 
 .caret-icon {
+    color: var(--icon-color);
     transition: transform 0.3s;
 }
 
@@ -41,13 +42,13 @@
 
 .options-list {
     position: absolute;
-    top: calc(100% - 2px); /* Align flush with custom-select border */
-    left: -2px; /* Align left with custom-select */
-    width: calc(100% + 4px); /* Match the custom-select width including border */
+    top: calc(100% - 2px); 
+    left: -2px; 
+    width: calc(100% + 4px);
     overflow-y: auto;
     background-color: var(--background-color);
     border: 2px solid var(--border-color);
-    border-top: none; /* Remove top border for seamless appearance */
+    border-top: none;
     z-index: 10;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 8px 8px;
@@ -55,8 +56,8 @@
 }
 
 .option {
-    padding: 5px;
-    color: var(--border-color);
+    padding: 5px 10px;
+    color: var(--text-color);
 }
 
 .option:hover {
