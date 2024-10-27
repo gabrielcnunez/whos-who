@@ -69,6 +69,7 @@
 .option {
     padding: 5px 10px;
     color: var(--text-color);
+    transition: background-color 0.3s;
 }
 
 .option:hover {
