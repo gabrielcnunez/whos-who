@@ -5,17 +5,26 @@
 
 <div class="selector-area">
   <div *ngIf="authLoading || configLoading">Loading...</div>
-  <div *ngIf="!authLoading && !configLoading">
- 
-    <select class="selector-box"
-      [(ngModel)]="selectedPlaylistId"
-      (ngModelChange)="setGenre($event)"
-    >
-      <option [value]=""></option>
-      <option *ngFor="let genre of genres" [value]="genre.playlist_id">
+  <div *ngIf="!authLoading && !configLoading" class="custom-select">
+    <div class="selected-option" (click)="toggleDropdown()">
+      {{ selectedGenre || "Select a genre" }}
+      <div class="caret-container">
+        <fa-icon
+          [icon]="faCaretDown"
+          [ngClass]="{'caret-up': dropdownOpen}"
+          class="caret-icon"
+        ></fa-icon>
+      </div>
+    </div>
+    <div class="options-list" *ngIf="dropdownOpen">
+      <div
+        *ngFor="let genre of genres"
+        class="option"
+        (click)="setGenre(genre.playlist_id); closeDropdown()"
+      >
         {{ genre.name }}
-      </option>
-    </select>
+      </div>
+    </div>
   </div>
 </div>
 

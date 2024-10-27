@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core"
 import { Router } from "@angular/router"
-import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faPlay } from '@fortawesome/free-solid-svg-icons';
 import { PlaylistService } from "../../services/playlist.service";
 import fetchFromSpotify, { request } from "../../services/api"
 
@@ -15,6 +15,7 @@ const TOKEN_KEY = "whos-who-access-token"
 })
 export class HomeComponent implements OnInit {
   
+  dropdownOpen = false
   genres: { name: string; playlist_id: string }[] = []
   selectedGenre: String = ""
   selectedPlaylistId: String = ""
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
   token: String = "";
   playlist: any
 
+  faCaretDown = faCaretDown
   faPlay = faPlay
 
   constructor(private router: Router, private playlistService: PlaylistService) {}
@@ -68,6 +70,14 @@ export class HomeComponent implements OnInit {
       { name: "Emo Forever", playlist_id: "37i9dQZF1DX9wa6XirBPv8" },
     ]
     this.configLoading = false
+  }
+
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
+  
+  closeDropdown() {
+    this.dropdownOpen = false;
   }
 
   setGenre(selectedPlaylistId: string) {
