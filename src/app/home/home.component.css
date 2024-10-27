@@ -31,10 +31,20 @@
     color: var(--text-color);
 }
 
+.caret-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    line-height: 0px;
+}
+
 .caret-icon {
     font-size: 20px;
     color: var(--icon-color);
     transition: transform 0.3s;
+    transform-origin: center;
 }
 
 .caret-up {
