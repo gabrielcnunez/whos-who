@@ -17,6 +17,11 @@
     border-style: solid;
 }
 
+.input::placeholder {
+    opacity: 0.5;
+    color: var(--icon-color)
+}
+
 button {
     margin: 10px;
     width: 200px;
