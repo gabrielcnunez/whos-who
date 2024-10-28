@@ -11,6 +11,10 @@
     text-align: center;
     border-radius: 20px;
     font-size: large;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border-color: var(--border-color);
+    border-style: solid;
 }
 
 button {
