@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { trigger, style, transition, animate } from "@angular/animations";
 import { faPlayCircle, faPauseCircle, faStopCircle, faVolumeDown, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
 import { Howl } from 'howler';
 import fetchFromSpotify from 'src/services/api'; "src/services/api";
@@ -11,7 +12,15 @@ const TOKEN_KEY = "whos-who-access-token"
 @Component({
   selector: 'app-gameplay',
   templateUrl: './gameplay.component.html',
-  styleUrls: ['./gameplay.component.css']
+  styleUrls: ['./gameplay.component.css'],
+  animations: [
+    trigger('wrongAnswerChange', [
+      transition(':increment', [
+        style({ transform: 'scale(2)', color: '#f44336' }),
+        animate('1.75s ease-out', style({ transform: 'scale(1)', color: '*' }))
+      ])
+    ])
+  ]
 })
 export class GameplayComponent implements OnInit {
   maxWrongAnswers: number = 4;
