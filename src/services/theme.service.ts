@@ -12,6 +12,19 @@ export class ThemeService {
     return this.darkModeSubject.value;
   }
 
+  constructor() { 
+    this.detectDarkMode()
+  }
+
+  private detectDarkMode() {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)')
+    this.setDarkMode(prefersDark.matches)
+
+    prefersDark.addEventListener('change', (event) => {
+      this.setDarkMode(event.matches)
+    })
+  }
+
   setDarkMode(isDarkMode: boolean) {
     this.darkModeSubject.next(isDarkMode)
     if (isDarkMode) {
@@ -20,5 +33,4 @@ export class ThemeService {
       document.body.classList.remove('dark-theme')
     }
   }
-  constructor() { }
 }
