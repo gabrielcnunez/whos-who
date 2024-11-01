@@ -17,12 +17,12 @@ const TOKEN_KEY = "whos-who-access-token"
     trigger('wrongAnswerChange', [
       transition(':increment', [
         style({ transform: 'scale(2)', color: '#f44336' }),
-        animate('1.75s ease-out', style({ transform: 'scale(1)', color: '*' }))
+        animate('1.5s ease-out', style({ transform: 'scale(1)', color: '*' }))
       ])
     ]),
     trigger('scoreChange', [
       transition(':increment', [
-        animate('0.5s ease-out', keyframes([
+        animate('1s ease-out', keyframes([
           style({ transform: 'rotateX(0deg)', opacity: 1, offset: 0 }),
           style({ transform: 'rotateX(90deg)', opacity: 0.3, offset: 0.5 }),
           style({ transform: 'rotateX(0deg)', opacity: 1, offset: 1 })
