@@ -232,8 +232,8 @@ export class GameplayComponent implements OnInit {
   }
 
   incrementScore(finalScore: number) {
-    const incrementInterval = 30;
-    const incrementAmount = 5;
+    const incrementInterval = 10;
+    const incrementAmount = 3;
   
     const interval = setInterval(() => {
       if (this.displayScore >= finalScore) {
