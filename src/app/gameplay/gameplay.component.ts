@@ -22,6 +22,19 @@ const TOKEN_KEY = "whos-who-access-token"
     ]),
     trigger('scoreChange', [
       transition(':increment', [
+        animate('1.5s ease-out', keyframes([
+          style({ transform: 'translateY(0)', opacity: 1, offset: 0 }),
+          style({ transform: 'translateY(-10px)', opacity: 0.8, offset: 0.15 }),
+          style({ transform: 'translateY(10px)', opacity: 0.6, offset: 0.3 }),
+          style({ transform: 'translateY(-10px)', opacity: 0.8, offset: 0.45 }),
+          style({ transform: 'translateY(0)', opacity: 1, offset: 0.6 }),
+          style({ transform: 'scale(1.1)', offset: 0.8 }),
+          style({ transform: 'scale(1)', offset: 1 })
+        ]))
+      ])
+    ]),
+    trigger('roundChange', [
+      transition(':increment', [
         animate('1s ease-out', keyframes([
           style({ transform: 'rotateX(0deg)', opacity: 1, offset: 0 }),
           style({ transform: 'rotateX(90deg)', opacity: 0.3, offset: 0.5 }),
@@ -50,6 +63,7 @@ export class GameplayComponent implements OnInit {
   selectedGenre: string = '';
   songIsPlaying: boolean = false;
   score: number = 0
+  displayScore: number = 0
   round: number = 1
   gameOver: boolean = false;
   winGame: boolean = false;
@@ -197,6 +211,7 @@ export class GameplayComponent implements OnInit {
     
     if (this.isCorrectAnswer) {
       this.score += 300;
+      this.incrementScore(this.score)
       this.resultMessage = "Correct!";
     } else {
       this.wrongAnswers += 1;
@@ -214,6 +229,20 @@ export class GameplayComponent implements OnInit {
       this.answerSubmitted = false;
       this.nextTrack();
     }, 1750)
+  }
+
+  incrementScore(finalScore: number) {
+    const incrementInterval = 10;
+    const incrementAmount = 3;
+  
+    const interval = setInterval(() => {
+      if (this.displayScore >= finalScore) {
+        clearInterval(interval);
+        this.displayScore = finalScore; 
+      } else {
+        this.displayScore += incrementAmount;
+      }
+    }, incrementInterval);
   }
   
   nextTrack() {
