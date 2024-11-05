@@ -5,7 +5,7 @@
   />
   
   <div class="game-info">
-    <p>Score <span class="game-values" id="score-value" [@scoreChange]="score">{{ score }}</span></p>
+    <p>Score <span class="game-values" id="score-value" [@scoreChange]="score">{{ displayScore }}</span></p>
     <p>Round <span class="game-values" [@roundChange]="round">{{ round }}</span></p>
     <p>Wrong Answers <span class="game-values" [@wrongAnswerChange]="wrongAnswers">{{ wrongAnswers }}</span></p>
   </div>
