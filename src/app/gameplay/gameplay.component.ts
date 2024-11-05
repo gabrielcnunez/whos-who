@@ -28,6 +28,15 @@ const TOKEN_KEY = "whos-who-access-token"
           style({ transform: 'rotateX(0deg)', opacity: 1, offset: 1 })
         ]))
       ])
+    ]),
+    trigger('roundChange', [
+      transition(':increment', [
+        animate('1s ease-out', keyframes([
+          style({ transform: 'rotateX(0deg)', opacity: 1, offset: 0 }),
+          style({ transform: 'rotateX(90deg)', opacity: 0.3, offset: 0.5 }),
+          style({ transform: 'rotateX(0deg)', opacity: 1, offset: 1 })
+        ]))
+      ])
     ])
   ]
 })
