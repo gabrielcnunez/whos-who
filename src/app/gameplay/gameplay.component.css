@@ -44,10 +44,12 @@ h2 {
 
 .game-values {
   display: inline-block;
-  width: 20px;
+  width: 25px;
   text-align: right;
-  font-family: "Overpass";
-  font-weight: 300;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: smaller;
 }
 
 #score-value {
